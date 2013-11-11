@@ -132,7 +132,7 @@
     <value>add</value>
   </data>
   <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Menu Item</value>
+    <value>reset rating counter</value>
   </data>
   <data name="StartPageTitle" xml:space="preserve">
     <value>start page</value>
@@ -142,5 +142,8 @@
   </data>
   <data name="AppUsageGuide" xml:space="preserve">
     <value>Start this app 5 times to see the dialog for reviewing the app. If you decline, you will be given the option to provide direct feedback to the developer. On the 10th run of the app, if a review was not already collected, you will be prompted one more time to rate the app.</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>MyCompany</value>
   </data>
 </root>

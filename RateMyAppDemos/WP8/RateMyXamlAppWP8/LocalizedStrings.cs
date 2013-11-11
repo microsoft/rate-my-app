@@ -9,9 +9,9 @@
  * See the license text file delivered with this project for more information.
  */
 
-using RateMyAppDemoXamlWp8.Resources;
+using RateMyXamlAppWP8.Resources;
 
-namespace RateMyAppDemoXamlWp8
+namespace RateMyXamlAppWP8
 {
     /// <summary>
     /// Provides access to string resources.

@@ -29,9 +29,43 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <DrawingSurface x:Name="DrawingSurface" Loaded="DrawingSurface_Loaded" />
 
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" VerticalAlignment="Top" Margin="12,0,12,0">
+            <TextBlock HorizontalAlignment="Center" 
+                       TextWrapping="Wrap" 
+                       VerticalAlignment="Top" 
+                       Text="{Binding LocalizedResources.AppUsageGuide, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
+        </Grid>
+
         <!-- Feedback overlay -->
-        <ctrl:FeedbackOverlay Grid.RowSpan="2" 
-                              FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"/>
+        <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
+                              Grid.RowSpan="2" 
+                              FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"
+                              CompanyName="{Binding Path=LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"/>
+
+        <!-- Fully customized FeedbackOverlay component -->
+        <!--
+        <ctrl:FeedbackOverlay Grid.RowSpan="2"
+                              EnableAnimation="True"
+                              RatingTitle="RatingTitle"
+                              RatingMessage1="Rating Message 1"
+                              RatingMessage2="Rating Message 2"
+                              RatingYes="Yes"
+                              RatingNo="No"
+                              FeedbackTitle="FeedbackTitle"
+                              FeedbackMessage1="Feedback Message 1"
+                              FeedbackYes="Yes"
+                              FeedbackNo="No"
+                              FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"
+                              FeedbackSubject="Feedback Subject"
+                              FeedbackBody="Feedback Body"
+                              CompanyName="MyCompany"
+                              FirstCount="5"
+                              SecondCount="10"
+                              CountDays="False"
+                              />
+        -->
+
     </Grid>
 
 </phone:PhoneApplicationPage>

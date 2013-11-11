@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RateMyAppDemoXamlWp8.Resources {
+namespace RateMyXamlAppWP8.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace RateMyAppDemoXamlWp8.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RateMyAppDemoXamlWp8.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RateMyXamlAppWP8.Resources.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -70,7 +70,7 @@ namespace RateMyAppDemoXamlWp8.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Menu Item.
+        ///   Looks up a localized string similar to reset rating counter.
         /// </summary>
         public static string AppBarMenuItemText {
             get {
@@ -93,6 +93,15 @@ namespace RateMyAppDemoXamlWp8.Resources {
         public static string AppUsageGuide {
             get {
                 return ResourceManager.GetString("AppUsageGuide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MyCompany.
+        /// </summary>
+        public static string CompanyName {
+            get {
+                return ResourceManager.GetString("CompanyName", resourceCulture);
             }
         }
         

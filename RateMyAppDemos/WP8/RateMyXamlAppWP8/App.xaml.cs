@@ -17,9 +17,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using RateMyAppDemoXamlWp8.Resources;
+using RateMyXamlAppWP8.Resources;
 
-namespace RateMyAppDemoXamlWp8
+namespace RateMyXamlAppWP8
 {
     public partial class App : Application
     {

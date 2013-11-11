@@ -17,11 +17,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RateMyAppDemoXamlWp8")]
+[assembly: AssemblyTitle("RateMyXamlAppWP8")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RateMyAppDemoXamlWp8")]
+[assembly: AssemblyCompany("Nokia")]
+[assembly: AssemblyProduct("RateMyXamlAppWP8")]
 [assembly: AssemblyCopyright("Copyright © 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RateMyDirect3DAppComp;
+using RateMyDirect3DApp.Resources;
 
 namespace RateMyDirect3DApp
 {
@@ -30,6 +31,25 @@ namespace RateMyDirect3DApp
         public MainPage()
         {
             InitializeComponent();
+
+            BuildApplicationBar();
+        }
+
+        private void BuildApplicationBar()
+        {
+            // Set the page's ApplicationBar to a new instance of ApplicationBar
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Mode = ApplicationBarMode.Minimized;
+
+            // Create reset menu item
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            appBarMenuItem.Click += new EventHandler(Reset_Click);
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            FeedbackOverlay.Reset();
         }
 
         private void DrawingSurface_Loaded(object sender, RoutedEventArgs e)

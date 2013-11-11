@@ -34,21 +34,57 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.StartPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       TextWrapping="Wrap" 
+                       VerticalAlignment="Top" 
+                       Text="{Binding LocalizedResources.AppUsageGuide, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
+
             <!--Create a single button to navigate to the second page which is rendered with the XNA Framework-->
-            <Button Height="100" Content="Change to game page" Click="Button_Click" />
+            <Button Height="100" Grid.Row="1" Content="Change to game page" Click="Button_Click" />
             
         </Grid>
         
         <!-- Feedback overlay -->
-        <ctrl:FeedbackOverlay Grid.RowSpan="2" 
-                              FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"/>
+        <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
+                              Grid.RowSpan="2" 
+                              FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"
+                              CompanyName="{Binding Path=LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"/>
+
+        <!-- Fully customized FeedbackOverlay component -->
+        <!--
+        <ctrl:FeedbackOverlay Grid.RowSpan="2"
+                              EnableAnimation="True"
+                              RatingTitle="RatingTitle"
+                              RatingMessage1="Rating Message 1"
+                              RatingMessage2="Rating Message 2"
+                              RatingYes="Yes"
+                              RatingNo="No"
+                              FeedbackTitle="FeedbackTitle"
+                              FeedbackMessage1="Feedback Message 1"
+                              FeedbackYes="Yes"
+                              FeedbackNo="No"
+                              FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"
+                              FeedbackSubject="Feedback Subject"
+                              FeedbackBody="Feedback Body"
+                              CompanyName="MyCompany"
+                              FirstCount="5"
+                              SecondCount="10"
+                              CountDays="False"
+                              />
+        -->
     </Grid>
  
 </phone:PhoneApplicationPage>

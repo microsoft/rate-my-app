@@ -70,7 +70,7 @@ namespace RateMyDirect3DApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Menu Item.
+        ///   Looks up a localized string similar to reset rating counter.
         /// </summary>
         public static string AppBarMenuItemText {
             get {
@@ -93,6 +93,15 @@ namespace RateMyDirect3DApp.Resources {
         public static string AppUsageGuide {
             get {
                 return ResourceManager.GetString("AppUsageGuide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MyCompany.
+        /// </summary>
+        public static string CompanyName {
+            get {
+                return ResourceManager.GetString("CompanyName", resourceCulture);
             }
         }
         

@@ -126,13 +126,13 @@
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
-    <value>RATE MY APP</value>
+    <value>rate my app</value>
   </data>
   <data name="AppBarButtonText" xml:space="preserve">
     <value>add</value>
   </data>
   <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Menu Item</value>
+    <value>reset rating counter</value>
   </data>
   <data name="StartPageTitle" xml:space="preserve">
     <value>start page</value>
@@ -145,5 +145,8 @@
   </data>
   <data name="FeedbackTo" xml:space="preserve">
     <value>support@myapp.com</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>MyCompany</value>
   </data>
 </root>

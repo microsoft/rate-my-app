@@ -9,6 +9,9 @@
  * See the license text file delivered with this project for more information.
  */
 
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using RateMyXamlAppWP7.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +23,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
 
 namespace RateMyXamlAppWP7
 {
@@ -30,12 +32,30 @@ namespace RateMyXamlAppWP7
         public MainPage()
         {
             InitializeComponent();
+
+            BuildApplicationBar();
         }
 
-        private void OnButtonTap(object sender, GestureEventArgs e)
+        private void BuildApplicationBar()
+        {
+            // Set the page's ApplicationBar to a new instance of ApplicationBar
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Mode = ApplicationBarMode.Minimized;
+
+            // Create reset menu item
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            appBarMenuItem.Click += new EventHandler(Reset_Click);
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
         {
             FeedbackOverlay.Reset();
-//            NavigationService.Navigate(new Uri("/AnotherPage.xaml", UriKind.Relative));
+        }
+
+        private void OnAnotherPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AnotherPage.xaml", UriKind.Relative));
         }
     }
 }

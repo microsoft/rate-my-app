@@ -127,7 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\PanoramaBackground.png" />
-    <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

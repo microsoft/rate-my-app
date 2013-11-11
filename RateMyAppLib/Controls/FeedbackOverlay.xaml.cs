@@ -557,6 +557,7 @@ namespace RateMyAppLib.Controls
             else
             {
                 SetVisibility(false);
+                FeedbackHelper.Default.State = FeedbackState.Inactive;
             }
         }
 
@@ -675,8 +676,8 @@ namespace RateMyAppLib.Controls
             else
             {
                 this.SetVisibility(false);
-                FeedbackHelper.Default.State = FeedbackState.Inactive;
             }
+            FeedbackHelper.Default.State = FeedbackState.Inactive;
         }
 
         /// <summary>
@@ -698,9 +699,9 @@ namespace RateMyAppLib.Controls
             }
             else if (FeedbackHelper.Default.State == FeedbackState.Feedback)
             {
-                FeedbackHelper.Default.State = FeedbackState.Inactive;
                 this.Feedback();
             }
+            FeedbackHelper.Default.State = FeedbackState.Inactive;
         }
 
         /// <summary>

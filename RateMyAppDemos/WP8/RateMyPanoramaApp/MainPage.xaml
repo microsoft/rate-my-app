@@ -29,43 +29,20 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
-
          <!--Panorama control-->
-        <phone:Panorama Title="my application">
+        <phone:Panorama Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
             <phone:Panorama.Background>
                 <ImageBrush ImageSource="/RateMyPanoramaApp;component/Assets/PanoramaBackground.png"/>
             </phone:Panorama.Background>
 
             <!--Panorama item one-->
             <phone:PanoramaItem Header="first item">
-                <!--Single line list with text wrapping-->
-                <phone:LongListSelector Margin="0,0,-22,0" ItemsSource="{Binding Items}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-6,0,12">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
+                <TextBlock Margin="12,0,0,0" 
+                           HorizontalAlignment="Center" 
+                           TextWrapping="Wrap" 
+                           VerticalAlignment="Top" 
+                           Text="{Binding LocalizedResources.AppUsageGuide, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
+
             </phone:PanoramaItem>
 
             <!--Panorama item two-->
@@ -123,17 +100,32 @@
         </phone:Panorama>
 
         <!-- Feedback overlay -->
-        <ctrl:FeedbackOverlay EnableAnimation="True"
+        <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
                               FeedbackTo="me@test.com"
                               CompanyName="MyCompany"/>
 
-        <!--Uncomment to see an alignment grid to help ensure your controls are
-            aligned on common boundaries.  The image has a top margin of -32px to
-            account for the System Tray. Set this to 0 (or remove the margin altogether)
-            if the System Tray is hidden.
-
-            Before shipping remove this XAML and the image itself.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        <!-- Fully customized FeedbackOverlay component -->
+        <!--
+        <ctrl:FeedbackOverlay Grid.RowSpan="2"
+                              EnableAnimation="True"
+                              RatingTitle="RatingTitle"
+                              RatingMessage1="Rating Message 1"
+                              RatingMessage2="Rating Message 2"
+                              RatingYes="Yes"
+                              RatingNo="No"
+                              FeedbackTitle="FeedbackTitle"
+                              FeedbackMessage1="Feedback Message 1"
+                              FeedbackYes="Yes"
+                              FeedbackNo="No"
+                              FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"
+                              FeedbackSubject="Feedback Subject"
+                              FeedbackBody="Feedback Body"
+                              CompanyName="MyCompany"
+                              FirstCount="5"
+                              SecondCount="10"
+                              CountDays="False"
+                              />
+        -->
 
     </Grid>
 </phone:PhoneApplicationPage>

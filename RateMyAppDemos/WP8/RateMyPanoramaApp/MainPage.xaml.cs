@@ -18,6 +18,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using RateMyPanoramaApp.Resources;
 
 namespace RateMyPanoramaApp
 {
@@ -30,6 +31,8 @@ namespace RateMyPanoramaApp
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
+
+            BuildApplicationBar();
         }
 
         // Load data for the ViewModel Items
@@ -39,6 +42,23 @@ namespace RateMyPanoramaApp
             {
                 App.ViewModel.LoadData();
             }
+        }
+
+        private void BuildApplicationBar()
+        {
+            // Set the page's ApplicationBar to a new instance of ApplicationBar
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Mode = ApplicationBarMode.Minimized;
+
+            // Create reset menu item
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            appBarMenuItem.Click += new EventHandler(Reset_Click);
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            FeedbackOverlay.Reset();
         }
     }
 }

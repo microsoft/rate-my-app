@@ -18,9 +18,9 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using RateMyAppDemoXamlWp8.Resources;
+using RateMyXamlAppWP8.Resources;
 
-namespace RateMyAppDemoXamlWp8
+namespace RateMyXamlAppWP8
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -29,24 +29,24 @@ namespace RateMyAppDemoXamlWp8
         {
             InitializeComponent();
 
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
+            BuildApplicationBar();
         }
 
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
+        private void BuildApplicationBar()
+        {
+            // Set the page's ApplicationBar to a new instance of ApplicationBar
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Mode = ApplicationBarMode.Minimized;
 
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
+            // Create reset menu item
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            appBarMenuItem.Click += new EventHandler(Reset_Click);
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+        }
 
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            FeedbackOverlay.Reset();
+        }
     }
 }

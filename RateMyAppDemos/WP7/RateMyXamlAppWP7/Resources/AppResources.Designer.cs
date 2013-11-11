@@ -70,7 +70,7 @@ namespace RateMyXamlAppWP7.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Menu Item.
+        ///   Looks up a localized string similar to reset rating counter.
         /// </summary>
         public static string AppBarMenuItemText {
             get {
@@ -97,6 +97,24 @@ namespace RateMyXamlAppWP7.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MyCompany.
+        /// </summary>
+        public static string CompanyName {
+            get {
+                return ResourceManager.GetString("CompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to support@myapp.com.
+        /// </summary>
+        public static string FeedbackTo {
+            get {
+                return ResourceManager.GetString("FeedbackTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
@@ -111,6 +129,15 @@ namespace RateMyXamlAppWP7.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to start page.
+        /// </summary>
+        public static string StartPageTitle {
+            get {
+                return ResourceManager.GetString("StartPageTitle", resourceCulture);
             }
         }
     }

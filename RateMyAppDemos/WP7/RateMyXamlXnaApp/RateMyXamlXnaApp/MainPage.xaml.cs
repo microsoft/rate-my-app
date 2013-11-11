@@ -21,6 +21,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using RateMyXamlXnaApp.Resources;
 
 namespace RateMyXamlXnaApp
 {
@@ -30,6 +32,25 @@ namespace RateMyXamlXnaApp
         public MainPage()
         {
             InitializeComponent();
+
+            BuildApplicationBar();
+        }
+
+        private void BuildApplicationBar()
+        {
+            // Set the page's ApplicationBar to a new instance of ApplicationBar
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Mode = ApplicationBarMode.Minimized;
+
+            // Create reset menu item
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            appBarMenuItem.Click += new EventHandler(Reset_Click);
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            FeedbackOverlay.Reset();
         }
 
         // Simple button Click event handler to take us to the second page
