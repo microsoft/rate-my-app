@@ -30,6 +30,14 @@ namespace RateMyXamlAppWP8
             InitializeComponent();
 
             BuildApplicationBar();
+
+            FeedbackOverlay.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
+        }
+
+        void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
+        {
+            bool visible = (FeedbackOverlay.Visibility != Visibility.Visible);
+            ApplicationBar.IsVisible = visible;
         }
 
         private void BuildApplicationBar()

@@ -274,7 +274,7 @@ namespace RateMyAppLib.Controls
         public static readonly DependencyProperty FeedbackToProperty =
             DependencyProperty.Register(
                 "FeedbackTo", typeof(string), typeof(FeedbackOverlay),
-                new PropertyMetadata("", null));
+                new PropertyMetadata(null, null));
 
         public static void SetFeedbackTo(FeedbackOverlay element, string value)
         {
@@ -334,7 +334,7 @@ namespace RateMyAppLib.Controls
         public static readonly DependencyProperty CompanyNameProperty =
             DependencyProperty.Register(
                 "CompanyName", typeof(string), typeof(FeedbackOverlay),
-                new PropertyMetadata("", null));
+                new PropertyMetadata(null, null));
 
         public static void SetCompanyName(FeedbackOverlay element, string value)
         {
@@ -676,8 +676,8 @@ namespace RateMyAppLib.Controls
             else
             {
                 this.SetVisibility(false);
+                FeedbackHelper.Default.State = FeedbackState.Inactive;
             }
-            FeedbackHelper.Default.State = FeedbackState.Inactive;
         }
 
         /// <summary>
@@ -755,6 +755,8 @@ namespace RateMyAppLib.Controls
         /// <param name="visible">True to set visible, otherwise False.</param>
         private void SetVisibility(bool visible)
         {
+            bool wasVisible = FeedbackOverlay.GetIsVisible(this) == true;
+
             if (visible)
             {
                 PreparePanoramaPivot(false);
@@ -770,7 +772,10 @@ namespace RateMyAppLib.Controls
                 Visibility = System.Windows.Visibility.Collapsed;
             }
 
-            OnVisibilityChanged();
+            if (wasVisible != visible)
+            {
+                OnVisibilityChanged();
+            }
         }
 
         /// <summary>

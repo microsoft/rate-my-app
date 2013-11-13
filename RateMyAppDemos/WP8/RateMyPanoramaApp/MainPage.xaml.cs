@@ -33,6 +33,13 @@ namespace RateMyPanoramaApp
             DataContext = App.ViewModel;
 
             BuildApplicationBar();
+
+            FeedbackOverlay.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
+        }
+
+        void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
+        {
+            ApplicationBar.IsVisible = (FeedbackOverlay.Visibility != Visibility.Visible);
         }
 
         // Load data for the ViewModel Items
