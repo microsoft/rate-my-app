@@ -102,6 +102,7 @@
         <!-- Feedback overlay -->
         <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
                               FeedbackTo="me@test.com"
+                              ApplicationName="MyApp"
                               CompanyName="MyCompany"/>
 
         <!-- Fully customized FeedbackOverlay component -->

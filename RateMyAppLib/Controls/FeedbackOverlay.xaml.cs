@@ -94,7 +94,7 @@ namespace RateMyAppLib.Controls
         public static readonly DependencyProperty RatingTitleProperty =
             DependencyProperty.Register(
                 "RatingTitle", typeof(string), typeof(FeedbackOverlay),
-                new PropertyMetadata(string.Format(AppResources.RatingTitle, GetApplicationName()), null));
+                new PropertyMetadata(AppResources.RatingTitle, null));
 
         public static void SetRatingTitle(FeedbackOverlay element, string value)
         {
@@ -214,7 +214,7 @@ namespace RateMyAppLib.Controls
         public static readonly DependencyProperty FeedbackMessage1Property =
             DependencyProperty.Register(
                 "FeedbackMessage1", typeof(string), typeof(FeedbackOverlay),
-                new PropertyMetadata(string.Format(AppResources.FeedbackMessage1, GetApplicationName()), null));
+                new PropertyMetadata(AppResources.FeedbackMessage1, null));
 
         public static void SetFeedbackMessage1(FeedbackOverlay element, string value)
         {
@@ -294,7 +294,7 @@ namespace RateMyAppLib.Controls
         public static readonly DependencyProperty FeedbackSubjectProperty =
             DependencyProperty.Register(
                 "FeedbackSubject", typeof(string), typeof(FeedbackOverlay),
-                new PropertyMetadata(string.Format(AppResources.FeedbackSubject, GetApplicationName()), null));
+                new PropertyMetadata(AppResources.FeedbackSubject, null));
 
         public static void SetFeedbackSubject(FeedbackOverlay element, string value)
         {
@@ -328,7 +328,7 @@ namespace RateMyAppLib.Controls
 
         #endregion
 
-        // Use this from XAML to control feedback body 
+        // Use this from XAML to control company name 
         #region CompanyName Dependency Property
 
         public static readonly DependencyProperty CompanyNameProperty =
@@ -344,6 +344,26 @@ namespace RateMyAppLib.Controls
         public static string GetCompanyName(FeedbackOverlay element)
         {
             return (string)element.GetValue(CompanyNameProperty);
+        }
+
+        #endregion
+
+        // Use this from XAML to control application name 
+        #region ApplicationName Dependency Property
+
+        public static readonly DependencyProperty ApplicationNameProperty =
+            DependencyProperty.Register(
+                "ApplicationName", typeof(string), typeof(FeedbackOverlay),
+                new PropertyMetadata(null, null));
+
+        public static void SetApplicationName(FeedbackOverlay element, string value)
+        {
+            element.SetValue(ApplicationNameProperty, value);
+        }
+
+        public static string GetApplicationName(FeedbackOverlay element)
+        {
+            return (string)element.GetValue(ApplicationNameProperty);
         }
 
         #endregion
@@ -505,7 +525,7 @@ namespace RateMyAppLib.Controls
         private void FeedbackOverlay_Loaded(object sender, RoutedEventArgs e)
         {
             // FeedbackTo property is mandatory and must be defined in xaml.
-            if (GetFeedbackTo(this).Length <= 0)
+            if (GetFeedbackTo(this) == null || GetFeedbackTo(this).Length <= 0)
             {
                 throw new ArgumentNullException("FeedbackTo", "Mandatory property not defined in FeedbackOverlay.");
             }
@@ -594,7 +614,7 @@ namespace RateMyAppLib.Controls
         /// </summary>
         private void SetupFirstMessage()
         {
-            Title = FeedbackOverlay.GetRatingTitle(this);
+            Title = string.Format(FeedbackOverlay.GetRatingTitle(this), GetApplicationName());
             Message = FeedbackOverlay.GetRatingMessage1(this);
             YesText = FeedbackOverlay.GetRatingYes(this);
             NoText = FeedbackOverlay.GetRatingNo(this);
@@ -605,7 +625,7 @@ namespace RateMyAppLib.Controls
         /// </summary>
         private void SetupSecondMessage()
         {
-            Title = FeedbackOverlay.GetRatingTitle(this);
+            Title = string.Format(FeedbackOverlay.GetRatingTitle(this), GetApplicationName());
             Message = FeedbackOverlay.GetRatingMessage2(this);
             YesText = FeedbackOverlay.GetRatingYes(this);
             NoText = FeedbackOverlay.GetRatingNo(this);
@@ -617,7 +637,7 @@ namespace RateMyAppLib.Controls
         private void SetupFeedbackMessage()
         {
             Title = FeedbackOverlay.GetFeedbackTitle(this);
-            Message = FeedbackOverlay.GetFeedbackMessage1(this);
+            Message = string.Format(FeedbackOverlay.GetFeedbackMessage1(this), GetApplicationName());
             YesText = FeedbackOverlay.GetFeedbackYes(this);
             NoText = FeedbackOverlay.GetFeedbackNo(this);
         }
@@ -725,7 +745,7 @@ namespace RateMyAppLib.Controls
             var parts = asm.FullName.Split(',');
             var version = parts[1].Split('=')[1];
 
-            string company = GetCompanyName();
+            string company = GetCompanyName(this);
             if (company == null || company.Length <= 0)
             {
                 company = "<Company>";
@@ -743,7 +763,7 @@ namespace RateMyAppLib.Controls
             // Email task
             var email = new EmailComposeTask();
             email.To = FeedbackOverlay.GetFeedbackTo(this);
-            email.Subject = FeedbackOverlay.GetFeedbackSubject(this);
+            email.Subject = string.Format(FeedbackOverlay.GetFeedbackSubject(this), GetApplicationName());
             email.Body = body;
 
             email.Show();
@@ -845,26 +865,25 @@ namespace RateMyAppLib.Controls
         }
 
         /// <summary>
-        /// Get company name.
-        /// </summary>
-        /// <returns>Company's name if available.</returns>
-        private string GetCompanyName()
-        {
-            return GetCompanyName(this);
-        }
-
-        /// <summary>
         /// Get application name.
         /// </summary>
-        /// <returns>Name of the application domain.</returns>
-        private static string GetApplicationName()
+        /// <returns>Name of the application.</returns>
+        private string GetApplicationName()
         {
-            string s = Application.Current.ToString();
-            if (s.EndsWith(".App"))
+            string appName = GetApplicationName(this);
+
+            // If application name has not been defined by the application,
+            // extract it from the Application class.
+            if (appName == null || appName.Length <= 0)
             {
-                s = s.Remove(s.LastIndexOf(".App"));
+                appName = Application.Current.ToString();
+                if (appName.EndsWith(".App"))
+                {
+                    appName = appName.Remove(appName.LastIndexOf(".App"));
+                }
             }
-            return s;
+
+            return appName;
         }
     }
 }
