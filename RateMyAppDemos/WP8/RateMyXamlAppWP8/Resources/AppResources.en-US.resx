@@ -146,4 +146,7 @@
   <data name="CompanyName" xml:space="preserve">
     <value>MyCompany</value>
   </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>RateMyXamlAppWP8</value>
+  </data>
 </root>

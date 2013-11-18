@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Phone
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateMyAppLib", "RateMyAppLib\RateMyAppLib.csproj", "{83C47431-2793-48E3-A2FB-CC6702523314}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateMyApp", "RateMyApp\RateMyApp.csproj", "{83C47431-2793-48E3-A2FB-CC6702523314}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateMyXamlAppWP7", "RateMyAppDemos\WP7\RateMyXamlAppWP7\RateMyXamlAppWP7.csproj", "{C56DD4A9-E6CB-47EA-A540-C2EF9F629412}"
 EndProject

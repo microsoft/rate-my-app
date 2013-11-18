@@ -11,7 +11,7 @@
 
 using System.IO.IsolatedStorage;
 
-namespace RateMyAppLib.Helpers
+namespace RateMyApp.Helpers
 {
     /// <summary>
     /// This helper class can be used to create, store, retrieve and

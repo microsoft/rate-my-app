@@ -13,7 +13,7 @@ using Microsoft.Phone.Shell;
 using System;
 using System.Diagnostics;
 
-namespace RateMyAppLib.Helpers
+namespace RateMyApp.Helpers
 {
     public enum FeedbackState
     {

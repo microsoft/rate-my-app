@@ -52,11 +52,11 @@ Important folders:
 | Folder | Description |
 | ------ | ----------- |
 | / | Contains the project file, the license information and this file (README.md) |
-| RateMyAppLib | Root folder for the implementation files of RateMyApp component. |
-| RateMyAppLib/Controls | FeedbackOverlay user control of RateMyApp component. |
-| RateMyAppLib/Helpers | Helper classes for RateMyApp component. |
-| RateMyAppLib/Properties | RateMyApp component properties. |
-| RateMyAppLib/Resources | RateMyApp component localization resources. |
+| RateMyApp | Root folder for the implementation files of RateMyApp component. |
+| RateMyApp/Controls | FeedbackOverlay user control of RateMyApp component. |
+| RateMyApp/Helpers | Helper classes for RateMyApp component. |
+| RateMyApp/Properties | RateMyApp component properties. |
+| RateMyApp/Resources | RateMyApp component localization resources. |
 | RateMyAppDemos | Root folder for the demo applications using RateMyApp component. |
 | RateMyAppDemos/WP7 | Root folder for WP7 demo applications. |
 | RateMyAppDemos/WP7/RateMyXamlAppWP7 | Root folder for RateMyXamlAppWP7 application. |

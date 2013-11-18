@@ -140,9 +140,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\RateMyAppLib\RateMyAppLib.csproj">
+    <ProjectReference Include="..\..\..\..\RateMyApp\RateMyApp.csproj">
       <Project>{83C47431-2793-48E3-A2FB-CC6702523314}</Project>
-      <Name>RateMyAppLib</Name>
+      <Name>RateMyApp</Name>
     </ProjectReference>
     <ProjectReference Include="..\RateMyDirect3DAppComp\RateMyDirect3DAppComp.vcxproj">
       <Name>RateMyDirect3DAppComp</Name>

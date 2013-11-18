@@ -20,10 +20,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-using RateMyAppLib.Helpers;
-using RateMyAppLib.Resources;
+using RateMyApp.Helpers;
+using RateMyApp.Resources;
 
-namespace RateMyAppLib.Controls
+namespace RateMyApp.Controls
 {
     /// <summary>
     /// The FeedbackOverlay is a user control which can be placed on the 
@@ -529,6 +529,18 @@ namespace RateMyAppLib.Controls
             {
                 throw new ArgumentNullException("FeedbackTo", "Mandatory property not defined in FeedbackOverlay.");
             }
+			
+            // ApplicationName property is mandatory and must be defined in xaml.
+            if (GetApplicationName(this) == null || GetApplicationName(this).Length <= 0)
+            {
+                throw new ArgumentNullException("ApplicationName", "Mandatory property not defined in FeedbackOverlay.");
+            }
+			
+            // CompanyName property is mandatory and must be defined in xaml.
+            if (GetCompanyName(this) == null || GetCompanyName(this).Length <= 0)
+            {
+                throw new ArgumentNullException("CompanyName", "Mandatory property not defined in FeedbackOverlay.");
+            }
 
             // Application language override.
             if (GetLanguageOverride(this) != null)
@@ -537,12 +549,12 @@ namespace RateMyAppLib.Controls
             }
 
             // Set up FeedbackHelper with properties.
-            RateMyAppLib.Helpers.FeedbackHelper.Default.FirstCount = FeedbackOverlay.GetFirstCount(this);
-            RateMyAppLib.Helpers.FeedbackHelper.Default.SecondCount = FeedbackOverlay.GetSecondCount(this);
-            RateMyAppLib.Helpers.FeedbackHelper.Default.CountDays = FeedbackOverlay.GetCountDays(this);
+            RateMyApp.Helpers.FeedbackHelper.Default.FirstCount = FeedbackOverlay.GetFirstCount(this);
+            RateMyApp.Helpers.FeedbackHelper.Default.SecondCount = FeedbackOverlay.GetSecondCount(this);
+            RateMyApp.Helpers.FeedbackHelper.Default.CountDays = FeedbackOverlay.GetCountDays(this);
 
             // Inform FeedbackHelper of the creation of this control.
-            RateMyAppLib.Helpers.FeedbackHelper.Default.Launching();
+            RateMyApp.Helpers.FeedbackHelper.Default.Launching();
 
             // This class needs to be aware of Back key presses.
             AttachBackKeyPressed();

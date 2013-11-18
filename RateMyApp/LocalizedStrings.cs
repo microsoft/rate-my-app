@@ -1,6 +1,6 @@
-﻿using RateMyAppLib.Resources;
+﻿using RateMyApp.Resources;
 
-namespace RateMyAppLib
+namespace RateMyApp
 {
     /// <summary>
     /// Provides access to string resources.

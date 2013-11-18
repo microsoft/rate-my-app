@@ -17,7 +17,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ctrl="clr-namespace:RateMyAppLib.Controls;assembly=RateMyAppLib"
+    xmlns:ctrl="clr-namespace:RateMyApp.Controls;assembly=RateMyApp"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -102,7 +102,7 @@
         <!-- Feedback overlay -->
         <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
                               FeedbackTo="me@test.com"
-                              ApplicationName="MyApp"
+                              ApplicationName="RateMyPanoramaApp"
                               CompanyName="MyCompany"/>
 
         <!-- Fully customized FeedbackOverlay component -->
