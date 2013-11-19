@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
   <Languages xmlns="">
@@ -8,6 +7,18 @@
     <Language code="en-GB" />
     <Language code="ro" />
     <Language code="sl-SI" />
+    <Language code="ar" />
+    <Language code="hr-HR" />
+    <Language code="nl" />
+    <Language code="fi-FI" />
+    <Language code="fr" />
+    <Language code="he" />
+    <Language code="hu-HU" />
+    <Language code="it" />
+    <Language code="pl-PL" />
+    <Language code="pt-BR" />
+    <Language code="pt-PT" />
+    <Language code="es" />
   </Languages>
   <App xmlns="" ProductID="{75ef9338-4d56-4b90-bf28-ab5f9a784bb4}" Title="RateMyPanoramaApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RateMyPanoramaApp author" Description="Sample description" Publisher="RateMyPanoramaApp" PublisherID="{eab5a3fd-04db-4994-a934-b88776a52a8d}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>

@@ -16,7 +16,7 @@
     <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>zh-CN%3ben-GB%3bde%3bro%3bsl-SI</SupportedCultures>
+    <SupportedCultures>zh-CN%3ben-GB%3bde%3bro%3bsl-SI%3bar%3bhr-HR%3bnl%3bfi-FI%3bfr%3bhe%3bhu-HU%3bit%3blt-LT%3bpt-BR%3bpt-PT%3bes</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>RateMyXamlAppWP7.xap</XapFilename>
@@ -102,8 +102,20 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.ar.resx" />
     <EmbeddedResource Include="Resources\AppResources.de.resx" />
     <EmbeddedResource Include="Resources\AppResources.en-GB.resx" />
+    <EmbeddedResource Include="Resources\AppResources.es.resx" />
+    <EmbeddedResource Include="Resources\AppResources.fi-FI.resx" />
+    <EmbeddedResource Include="Resources\AppResources.fr.resx" />
+    <EmbeddedResource Include="Resources\AppResources.he.resx" />
+    <EmbeddedResource Include="Resources\AppResources.hr-HR.resx" />
+    <EmbeddedResource Include="Resources\AppResources.hu-HU.resx" />
+    <EmbeddedResource Include="Resources\AppResources.it.resx" />
+    <EmbeddedResource Include="Resources\AppResources.lt-LT.resx" />
+    <EmbeddedResource Include="Resources\AppResources.nl.resx" />
+    <EmbeddedResource Include="Resources\AppResources.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\AppResources.pt-PT.resx" />
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
