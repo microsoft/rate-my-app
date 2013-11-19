@@ -43,6 +43,8 @@ To build and run the sample:
 To deploy the sample on Windows Phone 8 device:
  * See the official documentation for deploying and testing applications on Windows Phone devices at http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
+More detailed information can be found in the \Doc\RateMyApp.pdf file. 
+
 
 About the implementation
 ------------------------
@@ -84,6 +86,14 @@ Important classes:
 | FeedbackOverlay | The user control to access RateMyApp functionality. |
 
 
+Localisation
+------------
+
+In this first release the component includes strings localized in the following languages: Arabic, German, English US, English UK, Spanish, Finnish, French, Hebrew, Croatian, Hungarian, Italian, Lithuanian, Dutch, Polish, Portuguese BR, Portuguese PT, Romanian, Slovenian and Chinese Simplified.
+
+You are welcome to contribute your own translations (or improve the existing ones) at http://www.getlocalization.com/ratemyapp/
+
+
 Known issues
 ------------
 
@@ -99,6 +109,6 @@ See the license text file delivered with this project: https://github.com/nokia-
 Version history
 ---------------
 
- * 1.0 First public release 
+ * 1.0 First public release of the current implementation. You can find an earlier version of the project at http://developer.nokia.com/Community/Wiki/File:WP8_Rate_My_App_Flow.zip
 
 
