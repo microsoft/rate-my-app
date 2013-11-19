@@ -30,7 +30,7 @@ Instructions
 Make sure you have the following installed:
 
  * Windows 8
- * Windows Phone SDK 8.0
+ * Windows Phone SDK (min. WP 7.1)
 
 To build and run the sample:
 
@@ -43,7 +43,7 @@ To build and run the sample:
 To deploy the sample on Windows Phone 8 device:
  * See the official documentation for deploying and testing applications on Windows Phone devices at http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
-More detailed information can be found in the \Doc\RateMyApp.pdf file. 
+More detailed information can be found in the \Doc\RateMyAppGuide.pdf file. 
 
 
 About the implementation
