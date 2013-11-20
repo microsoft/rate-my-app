@@ -3,7 +3,7 @@ Rate My App
 
 The Rate My App component is used to create prompts that appear at set intervals and allow the user to provide feedback and rate the application in the Windows Phone Store.
 
-When the application with Rate My App component is started for the 5th time, a dialog for reviewing the app is shown to the user. If the user declines to review the app, he/she will be given the option to provide direct feedback to the developer. On the 10th run of the app, if a review was not already collected, the user will be prompted one more time to rate the app.
+By default, when the application with Rate My App component is started for the 5th time, a dialog for reviewing the app is shown to the user. If the user declines to review the app, she will be given the option to provide direct feedback to the developer. On the 10th run of the app, if a review was not already collected, the user will be prompted one more time to rate the app. The interval of showing the dialogs, as well as the precise textual content of the dialogs can be configured to better suit your needs.
 
 This solution consists of Rate My App component and several demo applications demonstrating how Rate My App component can be integrated to various kinds of Windows Phone applications like XAML, Panorama, XAML/XNA, XAML/Direct3D apps.
 
