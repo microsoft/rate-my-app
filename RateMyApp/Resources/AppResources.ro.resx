@@ -145,7 +145,7 @@ Spuneți-ne ce vă place la această aplicație și ce ați vrea să îmbunătă
   <data name="RatingMessage1" xml:space="preserve">
     <value>Am aprecia o evaluare de 5 stele.
 
-Manifestându-vă aprecierea în magazin ne veți ajuta să continuam dezvoltarea și îmbunatățirea acestei aplicații.</value>
+Manifestându-vă aprecierea în magazin ne veți ajuta să continuăm dezvoltarea și îmbunătățirea acestei aplicații.</value>
   </data>
   <data name="RatingMessage2" xml:space="preserve">
     <value>Se pare că această aplicație vă este utilă.
@@ -153,7 +153,7 @@ Manifestându-vă aprecierea în magazin ne veți ajuta să continuam dezvoltare
 Ne dați o recomandare de 5 stele?</value>
   </data>
   <data name="RatingTitle" xml:space="preserve">
-    <value>Cum vă place {0}?</value>
+    <value>Vă place {0}?</value>
   </data>
   <data name="RatingYes" xml:space="preserve">
     <value>dați-mi 5 stele</value>
