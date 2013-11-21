@@ -110,7 +110,7 @@ Downloads
 
 | Project | Release | Download |
 | ------- | --------| -------- |
-| Rate My App | v1.0 | https://github.com/nokia-developer/rate-my-app/archive/v1.0.zip |
+| Rate My App | v1.0 | [rate-my-app-1.0.zip](https://github.com/nokia-developer/rate-my-app/archive/v1.0.zip) |
 
 Version history
 ---------------
