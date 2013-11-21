@@ -89,6 +89,7 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppResources.ro.resx" />
+    <EmbeddedResource Include="Resources\AppResources.ru.resx" />
     <EmbeddedResource Include="Resources\AppResources.sl-SI.resx" />
     <EmbeddedResource Include="Resources\AppResources.zh-CN.resx" />
   </ItemGroup>

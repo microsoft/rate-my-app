@@ -20,6 +20,7 @@
     <Language code="pt-BR" />
     <Language code="pt-PT" />
     <Language code="es" />
+    <Language code="ru" />
   </Languages>
   <App xmlns="" ProductID="{1ba1552a-0d7b-4bbf-988b-9d0f8e9fe41f}" Title="RateMyDirect3DApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RateMyDirect3DApp author" Description="Sample description" Publisher="RateMyDirect3DApp" PublisherID="{63773b82-7388-4985-95ae-404240550f10}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
