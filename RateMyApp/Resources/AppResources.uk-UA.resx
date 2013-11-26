@@ -122,52 +122,52 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>hu-HU</value>
+    <value>uk-UA</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="FeedbackNo" xml:space="preserve">
-    <value>köszönöm, nem</value>
+    <value>ні, дякую</value>
   </data>
   <data name="FeedbackMessage1" xml:space="preserve">
-    <value>Sajnáljuk, hogy nem szeretné értékelni a(z) {0}-t.
-Ossza meg velünk tapasztalatait vagy javaslatait, hogyan lehetne az alkalmazás még jobb.</value>
+    <value>Шкода, що Ви не хочете оцінити додаток{0}.
+Повідомте Вашу думку та пропозицію щодо покращення додатка.</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
-    <value>Hogyan tehetnénk még jobbá?</value>
+    <value>Чи можемо ми щось покращити?</value>
   </data>
   <data name="FeedbackYes" xml:space="preserve">
-    <value>visszajelzés</value>
+    <value>залишити відгук</value>
   </data>
   <data name="RatingNo" xml:space="preserve">
-    <value>köszönöm, de nem</value>
+    <value>ні, дякую</value>
   </data>
   <data name="RatingMessage1" xml:space="preserve">
-    <value>Szeretnénk, ha 5-csillagos értékelést adna az alkalmazásunkra.
-Az Áruházba eljutó pozitív értékelések motiválnak minket a fejlesztés folytatására, és így az alkalmazás még jobbá válhat.</value>
+    <value>Ми будемо Вам дуже вдячні якщо Ви оціните наш додаток на 5 зірок
+Якщо Вам до вподоби наш додаток, підтримайте нас і нашу працю, щоб ми могли зробити його ще краще!</value>
   </data>
   <data name="RatingMessage2" xml:space="preserve">
-    <value>Úgy tűnik, jó hasznát veszi az alkalmazásunknak!
-Miért is ne adna rá 5-csillagos értékelést?</value>
+    <value>Здається, Ви дуже часто використовуєте наш додаток!
+Чому б Вам не оцінити його на 5 зірок, щоб підтримати нас?</value>
   </data>
   <data name="RatingTitle" xml:space="preserve">
-    <value>Tetszik a(z) {0}?</value>
+    <value>Вам до вподоби {0}?</value>
   </data>
   <data name="RatingYes" xml:space="preserve">
-    <value>5 csillagot adok</value>
+    <value>оцінити на 5</value>
   </data>
   <data name="FeedbackBody" xml:space="preserve">
-    <value>[Ide írja a véleményét!]
+    <value>[Залиште Ваш відгук тут]
 	
 ---------------------------------
-Eszköz típusa: {0}
-Eszköz gyártója: {1}
-Vezérlőprogram verziószáma: {2}
-Hardver verziószáma: {3}
-Alkalmazás verziószáma: {4}
+Назва пристрою: {0}
+Виробник: {1}
+Версія прошивки: {2}
+Версия апаратного забеспечення: {3}
+Версія додатка: {4}
 ---------------------------------
-Megjegyzés: ez a levélváltás a {5} felhasználási és adatvédelmi szabályzata által meghatározott módon kerül lebonyolításra. A részleteket megtalálja az alkalmazás Névjegy blokkjában.</value>
+Увага: Це e-mail листування виконується відповідно до {5}’s Terms and conditions and Privacy guidelines (умови і правила виконання конфіденційності). Додаткову інформацію Ви можете отримати в розділі Про програму (About) цього додатка.</value>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>{0} Vélemény</value>
+    <value>{0} Зворотьній зв'язок</value>
   </data>
 </root>

@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>en-GB%3bde%3bro%3bsl-SI%3bzh-CN%3bar%3bhr-HR%3bnl%3bfi-FI%3bfr%3bhe%3bhu-HU%3bit%3blt-LT%3bpl%3bpt-BR%3bpt-PT%3bes%3bru</SupportedCultures>
+    <SupportedCultures>en-GB%3bde%3bro%3bsl-SI%3bzh-CN%3bar%3bhr-HR%3bnl%3bfi-FI%3bfr%3bhe%3bhu-HU%3bit%3blt-LT%3bpl%3bpt-BR%3bpt-PT%3bes%3bru%3buk-UA%3bvi</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>RateMyXamlAppWP8_$(Configuration)_$(Platform).xap</XapFilename>
@@ -163,6 +163,8 @@
     <EmbeddedResource Include="Resources\AppResources.ro.resx" />
     <EmbeddedResource Include="Resources\AppResources.ru.resx" />
     <EmbeddedResource Include="Resources\AppResources.sl-SI.resx" />
+    <EmbeddedResource Include="Resources\AppResources.uk-UA.resx" />
+    <EmbeddedResource Include="Resources\AppResources.vi.resx" />
     <EmbeddedResource Include="Resources\AppResources.zh-CN.resx" />
   </ItemGroup>
   <ItemGroup>

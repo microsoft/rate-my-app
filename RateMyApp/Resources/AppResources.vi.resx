@@ -122,52 +122,52 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>hu-HU</value>
+    <value>vi-VN</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="FeedbackNo" xml:space="preserve">
-    <value>köszönöm, nem</value>
+    <value>Không, cám ơn.</value>
   </data>
   <data name="FeedbackMessage1" xml:space="preserve">
-    <value>Sajnáljuk, hogy nem szeretné értékelni a(z) {0}-t.
-Ossza meg velünk tapasztalatait vagy javaslatait, hogyan lehetne az alkalmazás még jobb.</value>
+    <value>Thật tiếc khi bạn từ chối đánh giá cho {0}.
+Chúng tôi rất mong sự chia sẻ kinh nghiệm và góp ý của bạn để ngày càng hoàn thiện nó hơn.</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
-    <value>Hogyan tehetnénk még jobbá?</value>
+    <value>Chúng tôi có thể làm tốt hơn không?</value>
   </data>
   <data name="FeedbackYes" xml:space="preserve">
-    <value>visszajelzés</value>
+    <value>Đóng góp ý kiến</value>
   </data>
   <data name="RatingNo" xml:space="preserve">
-    <value>köszönöm, de nem</value>
+    <value>Không, cám ơn.</value>
   </data>
   <data name="RatingMessage1" xml:space="preserve">
-    <value>Szeretnénk, ha 5-csillagos értékelést adna az alkalmazásunkra.
-Az Áruházba eljutó pozitív értékelések motiválnak minket a fejlesztés folytatására, és így az alkalmazás még jobbá válhat.</value>
+    <value>Chúng tôi rất mong được bạn đánh giá 5 sao.
+Việc thể hiện sự yêu thích của bạn sẽ giúp chúng tôi tiếp tục phát triển ứng dụng và ngày càng hoàn thiện hơn!</value>
   </data>
   <data name="RatingMessage2" xml:space="preserve">
-    <value>Úgy tűnik, jó hasznát veszi az alkalmazásunknak!
-Miért is ne adna rá 5-csillagos értékelést?</value>
+    <value>Xem ra bạn đã sử dụng khá nhiều ứng dụng của chúng tôi.
+Hãy đánh giá 5 sao cho ứng dụng này nào!</value>
   </data>
   <data name="RatingTitle" xml:space="preserve">
-    <value>Tetszik a(z) {0}?</value>
+    <value>Yêu thích {0}?</value>
   </data>
   <data name="RatingYes" xml:space="preserve">
-    <value>5 csillagot adok</value>
+    <value>Đánh giá 5 sao</value>
   </data>
   <data name="FeedbackBody" xml:space="preserve">
-    <value>[Ide írja a véleményét!]
+    <value>[Ý kiến của bạn]
 	
 ---------------------------------
-Eszköz típusa: {0}
-Eszköz gyártója: {1}
-Vezérlőprogram verziószáma: {2}
-Hardver verziószáma: {3}
-Alkalmazás verziószáma: {4}
+Tên máy: {0}
+Nhà sản xuất: {1}
+Số phiên bản phần sụn: {2}
+Số phiên bản phần cứng: {3}
+Số phiên bản ứng dụng: {4}
 ---------------------------------
-Megjegyzés: ez a levélváltás a {5} felhasználási és adatvédelmi szabályzata által meghatározott módon kerül lebonyolításra. A részleteket megtalálja az alkalmazás Névjegy blokkjában.</value>
+Ghi chú: Thư trao đổi này được quản lý bởi Điều khoản, Điều kiện và Chính sách quyền riêng tư của {5}. Vui lòng xem Phần giới thiệu ứng dụng để hiểu rõ hơn.</value>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>{0} Vélemény</value>
+    <value>Ý kiến khách hàng về {0}</value>
   </data>
 </root>

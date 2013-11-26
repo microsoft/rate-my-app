@@ -20,6 +20,8 @@
     <Language code="pt-PT" />
     <Language code="es" />
     <Language code="ru" />
+    <Language code="uk-UA" />
+    <Language code="vi" />
   </Languages>
   <App xmlns="" ProductID="{75ef9338-4d56-4b90-bf28-ab5f9a784bb4}" Title="RateMyPanoramaApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RateMyPanoramaApp author" Description="Sample description" Publisher="RateMyPanoramaApp" PublisherID="{eab5a3fd-04db-4994-a934-b88776a52a8d}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
