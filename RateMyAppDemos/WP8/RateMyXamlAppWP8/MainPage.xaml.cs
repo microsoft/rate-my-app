@@ -32,6 +32,11 @@ namespace RateMyXamlAppWP8
             BuildApplicationBar();
 
             FeedbackOverlay.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
+
+#if DEBUG
+            // Read the internal state of the Rate My App control
+            DataContext = RateMyApp.Helpers.FeedbackHelper.Default;
+#endif
         }
 
         void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)

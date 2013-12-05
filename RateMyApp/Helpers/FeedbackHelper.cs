@@ -11,6 +11,7 @@
 
 using Microsoft.Phone.Shell;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 
 namespace RateMyApp.Helpers
@@ -30,7 +31,7 @@ namespace RateMyApp.Helpers
     /// If the user reviews no more prompts are shown. When the app has been
     /// launched SecondCount times and not been reviewed, the prompt is shown.
     /// </summary>
-    public class FeedbackHelper
+    public class FeedbackHelper : INotifyPropertyChanged
     {
         // Constants
         private const string LaunchCountKey = "RATE_MY_APP_LAUNCH_COUNT";
@@ -38,27 +39,73 @@ namespace RateMyApp.Helpers
         private const string LastLaunchDateKey = "RATE_MY_APP_LAST_LAUNCH_DATE";
 
         // Members
+        private int firstCount;
+        private int secondCount;
+        private FeedbackState state;
+        private int launchCount = 0;
+        public event PropertyChangedEventHandler PropertyChanged;
         public static readonly FeedbackHelper Default = new FeedbackHelper();
-        private int _launchCount = 0;
-        private bool _reviewed = false;
-        private DateTime _lastLaunchDate = new DateTime();
+        private bool reviewed = false;
+        private DateTime lastLaunchDate = new DateTime();
+
+        public DateTime LastLaunchDate
+        {
+            get { return lastLaunchDate; }
+            set
+            {
+                lastLaunchDate = value;
+                OnPropertyChanged("LastLaunchDate");
+            }
+        }
+
+        public bool IsReviewed
+        {
+            get { return reviewed; }
+            set
+            {
+                reviewed = value;
+                OnPropertyChanged("IsReviewed");
+            }
+        }
 
         public FeedbackState State
         {
-            get;
-            set;
+            get { return state; }
+            set
+            {
+                state = value;
+                OnPropertyChanged("State");
+            }
+        }
+
+        public int LaunchCount
+        {
+            get { return launchCount; }
+            set
+            {
+                launchCount = value;
+                OnPropertyChanged("LaunchCount");
+            }
         }
 
         public int FirstCount
         {
-            get;
-            set;
+            get { return firstCount; }
+            set
+            {
+                firstCount = value;
+                OnPropertyChanged("FirstCount");
+            }
         }
 
         public int SecondCount
         {
-            get;
-            set;
+            get { return secondCount; }
+            set
+            {
+                secondCount = value;
+                OnPropertyChanged("SecondCount");
+            }
         }
 
         public bool CountDays
@@ -102,7 +149,7 @@ namespace RateMyApp.Helpers
         /// </summary>
         public void Reviewed()
         {
-            _reviewed = true;
+            IsReviewed = true;
             StoreState();
         }
 
@@ -111,9 +158,9 @@ namespace RateMyApp.Helpers
         /// </summary>
         public void Reset()
         {
-            _launchCount = 0;
-            _reviewed = false;
-            _lastLaunchDate = DateTime.Now;
+            LaunchCount = 0;
+            IsReviewed = false;
+            LastLaunchDate = DateTime.Now;
             StoreState();
         }
 
@@ -124,23 +171,23 @@ namespace RateMyApp.Helpers
         {
             try
             {
-                _launchCount = StorageHelper.GetSetting<int>(LaunchCountKey);
-                _reviewed = StorageHelper.GetSetting<bool>(ReviewedKey);
-                _lastLaunchDate = StorageHelper.GetSetting<DateTime>(LastLaunchDateKey);
+                LaunchCount = StorageHelper.GetSetting<int>(LaunchCountKey);
+                IsReviewed = StorageHelper.GetSetting<bool>(ReviewedKey);
+                LastLaunchDate = StorageHelper.GetSetting<DateTime>(LastLaunchDateKey);
 
-                if (!_reviewed)
+                if (!reviewed)
                 {
-                    if (!CountDays || _lastLaunchDate.Date < DateTime.Now.Date)
+                    if (!CountDays || lastLaunchDate.Date < DateTime.Now.Date)
                     {
-                        _launchCount++;
-                        _lastLaunchDate = DateTime.Now;
+                        LaunchCount++;
+                        LastLaunchDate = DateTime.Now;
                     }
 
-                    if (_launchCount == FirstCount)
+                    if (LaunchCount == FirstCount)
                     {
                         State = FeedbackState.FirstReview;
                     }
-                    else if (_launchCount == SecondCount)
+                    else if (LaunchCount == SecondCount)
                     {
                         State = FeedbackState.SecondReview;
                     }
@@ -161,13 +208,22 @@ namespace RateMyApp.Helpers
         {
             try
             {
-                StorageHelper.StoreSetting(LaunchCountKey, _launchCount, true);
-                StorageHelper.StoreSetting(ReviewedKey, _reviewed, true);
-                StorageHelper.StoreSetting(LastLaunchDateKey, _lastLaunchDate, true);
+                StorageHelper.StoreSetting(LaunchCountKey, LaunchCount, true);
+                StorageHelper.StoreSetting(ReviewedKey, reviewed, true);
+                StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate, true);
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(string.Format("FeedbackHelper.StoreState - Failed to store state, Exception: {0}", ex.ToString()));
+            }
+        }
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
             }
         }
     }

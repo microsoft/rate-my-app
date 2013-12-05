@@ -38,13 +38,21 @@
             <TextBlock Text="{Binding Path=LocalizedResources.StartPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock HorizontalAlignment="Center" 
+        <!--StackPanel - place additional content here-->
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock HorizontalAlignment="Left" 
                        TextWrapping="Wrap" 
                        VerticalAlignment="Top" 
-                       Text="{Binding LocalizedResources.AppUsageGuide, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
-        </Grid>
+                       Text="{Binding LocalizedResources.AppUsageGuide, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+            <StackPanel Margin="0,12,0,0">
+                <TextBlock Text="{Binding FirstCount, StringFormat='First count: {0}'}" />
+                <TextBlock Text="{Binding SecondCount, StringFormat='Second count: {0}'}" />
+                <TextBlock Text="{Binding State, StringFormat='Control state: {0}'}" />
+                <TextBlock Text="{Binding LaunchCount, StringFormat='Launch count: {0}'}" />
+                <TextBlock Text="{Binding IsReviewed, StringFormat='Is app reviewed: {0}'}" />
+                <TextBlock Text="{Binding LastLaunchDate, StringFormat='Last launch date: {0:G}'}" />
+            </StackPanel>
+        </StackPanel>
         
         <!-- Feedback overlay -->
 
