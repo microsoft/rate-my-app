@@ -10,6 +10,7 @@
  */
 
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -225,6 +226,14 @@ namespace RateMyApp.Helpers
             {
                 handler(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        public void Review()
+        {
+            Reviewed();
+
+            var marketplace = new MarketplaceReviewTask();
+            marketplace.Show();
         }
     }
 }

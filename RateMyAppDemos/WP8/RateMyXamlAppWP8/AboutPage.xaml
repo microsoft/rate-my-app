@@ -1,0 +1,46 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RateMyXamlAppWP8.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" Name="AboutPageElement">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock Text="{Binding Path=LocalizedResources.AboutPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Text="{Binding Path=AppTitle}"/>
+            <TextBlock Text="{Binding Path=AppVersion}"/>
+            <TextBlock Text="{Binding Path=AppAuthor}"/>
+            <TextBlock Text="{Binding Path=AppPublisher}"/>
+            <TextBlock Text="❖" HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding Path=LocalizedResources.ContactInfo, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center"/>
+            <TextBlock Text="❖" HorizontalAlignment="Center" />
+            <HyperlinkButton NavigateUri="{Binding Path=LocalizedResources.TermsAndConditionsLink, Source={StaticResource LocalizedStrings}}"  Content="{Binding Path=LocalizedResources.TermsAndConditionsText, Source={StaticResource LocalizedStrings}}" TargetName="_new"/>
+            <TextBlock Text="❖" HorizontalAlignment="Center" />
+            <HyperlinkButton NavigateUri="{Binding Path=LocalizedResources.PrivacyInfoLink, Source={StaticResource LocalizedStrings}}"  Content="{Binding Path=LocalizedResources.PrivacyInfoText, Source={StaticResource LocalizedStrings}}"/>
+            <TextBlock Text="❖" HorizontalAlignment="Center" />
+            <Button x:Name="RateAppButton" Content="Rate app in the store" Click="RateAppButton_Click" />
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>
