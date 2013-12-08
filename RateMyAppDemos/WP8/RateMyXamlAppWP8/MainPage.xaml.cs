@@ -51,14 +51,24 @@ namespace RateMyXamlAppWP8
             ApplicationBar.Mode = ApplicationBarMode.Minimized;
 
             // Create reset menu item
-            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemResetText);
             appBarMenuItem.Click += new EventHandler(Reset_Click);
             ApplicationBar.MenuItems.Add(appBarMenuItem);
+            // Create reset menu item
+            appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemAboutText);
+            appBarMenuItem.Click += new EventHandler(About_Click);
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+
         }
 
         private void Reset_Click(object sender, EventArgs e)
         {
             FeedbackOverlay.Reset();
+        }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
         }
     }
 }
