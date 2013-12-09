@@ -26,6 +26,7 @@
     <Language code="uk-UA" />
     <Language code="vi" />
     <Language code="sv" />
+    <Language code="nb-NO" />
   </Languages>
   <App xmlns="" ProductID="{bd80b8ce-23ae-4fd0-acf5-67499b079a7b}" Title="RateMyXamlAppWP8" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RateMyXamlAppWP8 author" Description="Sample description" Publisher="RateMyXamlAppWP8" PublisherID="{2a0c9e2b-476b-4375-9e59-6a9e83f13ede}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
