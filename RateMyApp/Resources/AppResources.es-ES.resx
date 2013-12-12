@@ -122,56 +122,57 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>ro</value>
+    <value>es-ES</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="FeedbackNo" xml:space="preserve">
-    <value>nu, mulțumesc </value>
+    <value>no gracias</value>
   </data>
   <data name="FeedbackMessage1" xml:space="preserve">
-    <value>Ne pare rău că nu vreți să evaluați {0}.
+    <value>Lamentamos que no quieras valorar {0}.
 
-Spuneți-ne ce vă place la această aplicație și ce ați vrea să îmbunătățim.</value>
+Cuentanos tu experiencia o sugierenos como podemos hacerlo mejor.</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
-    <value>Putem îmbunătăți aplicația?</value>
+    <value>¿Podemos hacerlo mejor?</value>
   </data>
   <data name="FeedbackYes" xml:space="preserve">
-    <value>trimite feedback</value>
+    <value>dar opinion</value>
   </data>
   <data name="RatingNo" xml:space="preserve">
-    <value>nu, multumesc</value>
+    <value>no gracias</value>
   </data>
   <data name="RatingMessage1" xml:space="preserve">
-    <value>Am aprecia o evaluare de 5 stele.
+    <value>Nos gustaria que valorases nuestra app con 5 estrellas.
 
-Manifestându-vă aprecierea în magazin ne veți ajuta să continuăm dezvoltarea și îmbunătățirea acestei aplicații.</value>
+Tu valoración en la tienda nos ayuda con nuestro trabajo en la app y hacerla aún mejor.</value>
   </data>
   <data name="RatingMessage2" xml:space="preserve">
-    <value>Se pare că această aplicație vă este utilă.
-    
-Ne dați o recomandare de 5 stele?</value>
+    <value>¡Parece que usas bastante nuestra aplicación!
+
+¿Por que no lo demuestras valorandonos con 5 estrellas?</value>
   </data>
   <data name="RatingTitle" xml:space="preserve">
-    <value>Vă place {0}?</value>
+    <value>¿Disfrutas {0}?</value>
   </data>
   <data name="RatingYes" xml:space="preserve">
-    <value>dați-mi 5 stele</value>
+    <value>valorar 5 estrellas</value>
   </data>
   <data name="FeedbackBody" xml:space="preserve">
-    <value>[Inserați aici mesajul dumneavoastră.]
+    <value>[Tu opinión aqui]
 
+--------------------------------- 
+Nombre dispositivo: {0}
+Fabricante dispositivo: {1}
+Versión Firmware: {2}
+Versión Hardware: {3}
+Versión Aplicación: {4}
+--------------------------------- 
 
----------------------------------
-Numele telefonului: {0}
-Producător: {1}
-Versiunea software: {2}
-Versiunea hardware: {3}
-Versiunea aplicației: {4}
----------------------------------
-Observație: Această comunicare electronică se face cu respectarea termenilor contractuali și de protecție a datelor personale specificate de {5} în secțiunea "Despre aplicație".</value>
+Nota: El intercambio de email queda sujeto a los terminos y condiciones de privacidad de {5}.Mas detalles en la sección "Acerca de" de la aplicación.
+</value>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>Opiniile utilizatorului despre {0}</value>
+    <value>{0} Opinión del usuario</value>
   </data>
 </root>
