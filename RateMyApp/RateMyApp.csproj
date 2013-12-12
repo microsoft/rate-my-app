@@ -18,7 +18,7 @@
     <SilverlightApplication>false</SilverlightApplication>
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <SupportedCultures>zh-CN%3ben-GB%3bde%3bro%3bsl-SI%3bar%3bhr-HR%3bnl%3bfi-FI%3bfr%3bhe%3bhu-HU%3bit%3blt-LT%3bpl-PL%3bpt-BR%3bpt-PT%3bes%3buk-UA%3bvi%3bsv%3bnb-NO</SupportedCultures>
+    <SupportedCultures>zh-CN%3bru-RU%3ben-GB%3bde-DE%3bro-RO%3bsl-SI%3bhr-HR%3bnl-NL%3bfi-FI%3bfr-FR%3bhe-IL%3bhu-HU%3bit-IT%3blt-LT%3bpl-PL%3bpt-BR%3bpt-PT%3buk-UA%3bvi-VN%3bsv-SE%3bnb-NO%3bes-ES%3bar-SA</SupportedCultures>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,20 +68,20 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\AppResources.ar.resx" />
-    <EmbeddedResource Include="Resources\AppResources.de.resx" />
+    <EmbeddedResource Include="Resources\AppResources.ar-SA.resx" />
+    <EmbeddedResource Include="Resources\AppResources.de-DE.resx" />
     <EmbeddedResource Include="Resources\AppResources.en-GB.resx" />
     <EmbeddedResource Include="Resources\AppResources.en-US.resx" />
-    <EmbeddedResource Include="Resources\AppResources.es.resx" />
+    <EmbeddedResource Include="Resources\AppResources.es-ES.resx" />
     <EmbeddedResource Include="Resources\AppResources.fi-FI.resx" />
-    <EmbeddedResource Include="Resources\AppResources.fr.resx" />
-    <EmbeddedResource Include="Resources\AppResources.he.resx" />
+    <EmbeddedResource Include="Resources\AppResources.fr-FR.resx" />
+    <EmbeddedResource Include="Resources\AppResources.he-IL.resx" />
     <EmbeddedResource Include="Resources\AppResources.hr-HR.resx" />
     <EmbeddedResource Include="Resources\AppResources.hu-HU.resx" />
-    <EmbeddedResource Include="Resources\AppResources.it.resx" />
+    <EmbeddedResource Include="Resources\AppResources.it-IT.resx" />
     <EmbeddedResource Include="Resources\AppResources.lt-LT.resx" />
     <EmbeddedResource Include="Resources\AppResources.nb-NO.resx" />
-    <EmbeddedResource Include="Resources\AppResources.nl.resx" />
+    <EmbeddedResource Include="Resources\AppResources.nl-NL.resx" />
     <EmbeddedResource Include="Resources\AppResources.pl-PL.resx" />
     <EmbeddedResource Include="Resources\AppResources.pt-BR.resx" />
     <EmbeddedResource Include="Resources\AppResources.pt-PT.resx" />
@@ -89,12 +89,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.ro.resx" />
-    <EmbeddedResource Include="Resources\AppResources.ru.resx" />
+    <EmbeddedResource Include="Resources\AppResources.ro-RO.resx" />
+    <EmbeddedResource Include="Resources\AppResources.ru-RU.resx" />
     <EmbeddedResource Include="Resources\AppResources.sl-SI.resx" />
-    <EmbeddedResource Include="Resources\AppResources.sv.resx" />
+    <EmbeddedResource Include="Resources\AppResources.sv-SE.resx" />
     <EmbeddedResource Include="Resources\AppResources.uk-UA.resx" />
-    <EmbeddedResource Include="Resources\AppResources.vi.resx" />
+    <EmbeddedResource Include="Resources\AppResources.vi-VN.resx" />
     <EmbeddedResource Include="Resources\AppResources.zh-CN.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

@@ -2,29 +2,33 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
   <Languages xmlns="">
-    <Language code="zh-CN" />
+    <Language code="de-DE" />
     <Language code="en-GB" />
-    <Language code="de" />
-    <Language code="ro" />
+    <Language code="en-US" />
+    <Language code="de-DE" />
+    <Language code="ro-RO" />
     <Language code="sl-SI" />
-    <Language code="ar" />
+    <Language code="zh-CN" />
+    <Language code="ar-SA" />
     <Language code="hr-HR" />
-    <Language code="nl" />
+    <Language code="nl-NL" />
     <Language code="fi-FI" />
-    <Language code="fr" />
-    <Language code="he" />
+    <Language code="fr-FR" />
+    <Language code="he-IL" />
     <Language code="hu-HU" />
-    <Language code="it" />
+    <Language code="it-IT" />
     <Language code="lt-LT" />
     <Language code="pl-PL" />
     <Language code="pt-BR" />
     <Language code="pt-PT" />
-    <Language code="es" />
-    <Language code="ru" />
+    <Language code="ru-RU" />
     <Language code="uk-UA" />
-    <Language code="vi" />
-    <Language code="sv" />
+    <Language code="vi-VN" />
+    <Language code="sv-SE" />
     <Language code="nb-NO" />
+    <Language code="pl-PL" />
+    <Language code="es-ES" />
+    <Language code="ar-SA" />
   </Languages>
   <App xmlns="" ProductID="{1ba1552a-0d7b-4bbf-988b-9d0f8e9fe41f}" Title="RateMyDirect3DApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RateMyDirect3DApp author" Description="Sample description" Publisher="RateMyDirect3DApp" PublisherID="{63773b82-7388-4985-95ae-404240550f10}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
