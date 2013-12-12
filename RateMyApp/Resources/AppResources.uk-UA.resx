@@ -130,6 +130,7 @@
   </data>
   <data name="FeedbackMessage1" xml:space="preserve">
     <value>Шкода, що Ви не хочете оцінити додаток{0}.
+
 Повідомте Вашу думку та пропозицію щодо покращення додатка.</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
@@ -143,10 +144,12 @@
   </data>
   <data name="RatingMessage1" xml:space="preserve">
     <value>Ми будемо Вам дуже вдячні якщо Ви оціните наш додаток на 5 зірок
+
 Якщо Вам до вподоби наш додаток, підтримайте нас і нашу працю, щоб ми могли зробити його ще краще!</value>
   </data>
   <data name="RatingMessage2" xml:space="preserve">
     <value>Здається, Ви дуже часто використовуєте наш додаток!
+
 Чому б Вам не оцінити його на 5 зірок, щоб підтримати нас?</value>
   </data>
   <data name="RatingTitle" xml:space="preserve">
@@ -157,7 +160,7 @@
   </data>
   <data name="FeedbackBody" xml:space="preserve">
     <value>[Залиште Ваш відгук тут]
-	
+
 ---------------------------------
 Назва пристрою: {0}
 Виробник: {1}
@@ -165,6 +168,7 @@
 Версия апаратного забеспечення: {3}
 Версія додатка: {4}
 ---------------------------------
+
 Увага: Це e-mail листування виконується відповідно до {5}’s Terms and conditions and Privacy guidelines (умови і правила виконання конфіденційності). Додаткову інформацію Ви можете отримати в розділі Про програму (About) цього додатка.</value>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">

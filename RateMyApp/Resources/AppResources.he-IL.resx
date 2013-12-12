@@ -118,60 +118,60 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
+    <value>RightToLeft</value>
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>hu-HU</value>
+    <value>he-IL</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="FeedbackNo" xml:space="preserve">
-    <value>köszönöm, nem</value>
+    <value>לא תודה</value>
   </data>
   <data name="FeedbackMessage1" xml:space="preserve">
-    <value>Sajnáljuk, hogy nem szeretné értékelni a(z) {0}-t.
+    <value>מצטערים לשמוע שלא רצית לדרג את {0}.
 
-Ossza meg velünk tapasztalatait vagy javaslatait, hogyan lehetne az alkalmazás még jobb.</value>
+ספר לנו על החוויה שלך באפליקציה או הצע לנו כיצד נוכל לשפר אותה.</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
-    <value>Hogyan tehetnénk még jobbá?</value>
+    <value>האם אנחנו יכולים לשפר את זה?</value>
   </data>
   <data name="FeedbackYes" xml:space="preserve">
-    <value>visszajelzés</value>
+    <value>תן לנו משוב</value>
   </data>
   <data name="RatingNo" xml:space="preserve">
-    <value>köszönöm, de nem</value>
+    <value>לא תודה</value>
   </data>
   <data name="RatingMessage1" xml:space="preserve">
-    <value>Szeretnénk, ha 5-csillagos értékelést adna az alkalmazásunkra.
+    <value>אנחנו נעריך אם תדרג את האפליקציה שלנו ב 5 כוכבים
 
-Az Áruházba eljutó pozitív értékelések motiválnak minket a fejlesztés folytatására, és így az alkalmazás még jobbá válhat.</value>
+הדירוג שלך בחנות יעזור לנו להמשיך ולעבוד על האפליקציה ולשפר דברים עוד יותר!</value>
   </data>
   <data name="RatingMessage2" xml:space="preserve">
-    <value>Úgy tűnik, jó hasznát veszi az alkalmazásunknak!
+    <value>שמנו לב שאתה משתמש הרבה באפליקציה.
 
-Miért is ne adna rá 5-csillagos értékelést?</value>
+מדוע שלא תעניק לנו 5 כוכבים בדירוג להראות את הערכתך?</value>
   </data>
   <data name="RatingTitle" xml:space="preserve">
-    <value>Tetszik a(z) {0}?</value>
+    <value>נהנה מ{0}?</value>
   </data>
   <data name="RatingYes" xml:space="preserve">
-    <value>5 csillagot adok</value>
+    <value>דרג 5 כוכבים</value>
   </data>
   <data name="FeedbackBody" xml:space="preserve">
-    <value>[Ide írja a véleményét!]
+    <value>[הכנס את המשוב כאן]
 
----------------------------------
-Eszköz típusa: {0}
-Eszköz gyártója: {1}
-Vezérlőprogram verziószáma: {2}
-Hardver verziószáma: {3}
-Alkalmazás verziószáma: {4}
----------------------------------
+------------------------------
+שם מכשיר: {0}
+שם יצרן: {1}
+גירסת תוכנה מכשיר: {2}
+גירסת חומרה מכשיר: {3}
+גירסת אפליקציה: {4}
+-------------------------------
 
-Megjegyzés: ez a levélváltás a {5} felhasználási és adatvédelmi szabályzata által meghatározott módon kerül lebonyolításra. A részleteket megtalálja az alkalmazás Névjegy blokkjában.</value>
+שים לב: שליחת הדואר מותנת תחת הסכם השימוש והסכם הפרטיות של {5}. עוד פרטים בנושא תחת עמוד ה"אודות" באפליקציה.</value>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>{0} Vélemény</value>
+    <value>{0} - משוב משתמש</value>
   </data>
 </root>

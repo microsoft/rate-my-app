@@ -122,58 +122,31 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>es</value>
+    <value>en-GB</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
-  <data name="FeedbackNo" xml:space="preserve">
-    <value>no gracias</value>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>RATE MY APP</value>
   </data>
-  <data name="FeedbackMessage1" xml:space="preserve">
-    <value>Lamentamos que no quieras valorar {0}.
-
-Cuentanos tu experiencia o sugierenos como podemos hacerlo mejor.</value>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>add</value>
   </data>
-  <data name="FeedbackTitle" xml:space="preserve">
-    <value>¿Podemos hacerlo mejor?</value>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>reset rating counter</value>
   </data>
-  <data name="FeedbackYes" xml:space="preserve">
-    <value>dar opinion</value>
+  <data name="StartPageTitle" xml:space="preserve">
+    <value>start page</value>
   </data>
-  <data name="RatingNo" xml:space="preserve">
-    <value>no gracias</value>
+  <data name="FeedbackTo" xml:space="preserve">
+    <value>support@myapp.com</value>
   </data>
-  <data name="RatingMessage1" xml:space="preserve">
-    <value>Nos gustaria que valorases nuestra app con 5 estrellas.
-
-Tu valoración en la tienda nos ayuda con nuestro trabajo en la app y hacerla aún mejor.</value>
+  <data name="AppUsageGuide" xml:space="preserve">
+    <value>Start this app 5 times to see the dialog for reviewing the app. If you decline, you will be given the option to provide direct feedback to the developer. On the 10th run of the app, if a review was not already collected, you will be prompted one more time to rate the app.</value>
   </data>
-  <data name="RatingMessage2" xml:space="preserve">
-    <value>¡Parece que usas bastante nuestra aplicación!
-
-¿Por que no lo demuestras valorandonos con 5 estrellas?</value>
+  <data name="CompanyName" xml:space="preserve">
+    <value>MyCompany</value>
   </data>
-  <data name="RatingTitle" xml:space="preserve">
-    <value>¿Disfrutas {0}?</value>
-  </data>
-  <data name="RatingYes" xml:space="preserve">
-    <value>valorar 5 estrellas</value>
-  </data>
-  <data name="FeedbackBody" xml:space="preserve">
-    <value>[Tu opinión aqui]
-
-
---------------------------------- 
-Nombre dispositivo: {0}
-Fabricante dispositivo: {1}
-Versión Firmware: {2}
-Versión Hardware: {3}
-Versión Aplicación: {4}
---------------------------------- 
-
-Nota: El intercambio de email queda sujeto a los terminos y condiciones de privacidad de {5}.Mas detalles en la sección "Acerca de" de la aplicación.
-</value>
-  </data>
-  <data name="FeedbackSubject" xml:space="preserve">
-    <value>{0} Opinión del usuario</value>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>RateMyDirect3DApp</value>
   </data>
 </root>

@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
+  <xsd:schema id="root" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element msdata:IsDataSet="true" name="root">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element minOccurs="0" name="value" type="xsd:string"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element minOccurs="0" msdata:Ordinal="1" name="value" type="xsd:string"/>
+                <xsd:element minOccurs="0" msdata:Ordinal="2" name="comment" type="xsd:string"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute msdata:Ordinal="1" name="name" type="xsd:string" use="required"/>
+              <xsd:attribute msdata:Ordinal="3" name="type" type="xsd:string"/>
+              <xsd:attribute msdata:Ordinal="4" name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element minOccurs="0" msdata:Ordinal="1" name="value" type="xsd:string"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -122,56 +122,57 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>de</value>
+    <value>it-IT</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="FeedbackNo" xml:space="preserve">
-    <value>Nein, danke.</value>
+    <value>no grazie</value>
   </data>
   <data name="FeedbackMessage1" xml:space="preserve">
-    <value>Schade, dass Sie {0} nicht bewerten wollen.
+    <value>Ci dispiace che tu non voglia recensire {0}.
 
-Erzählen Sie uns Ihre Erfahrungen oder schlagen Sie vor, wie wir die App noch besser machen können.</value>
+Dicci della tua esperienza o suggeriscici come possiamo renderla ancora migliore</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
-    <value>Können wir es besser machen?</value>
+    <value>Possiamo renderla migliore?</value>
   </data>
   <data name="FeedbackYes" xml:space="preserve">
-    <value>Feedback geben</value>
+    <value>Scrivici un commento</value>
   </data>
   <data name="RatingNo" xml:space="preserve">
-    <value>Nein, danke.</value>
+    <value>no grazie</value>
   </data>
   <data name="RatingMessage1" xml:space="preserve">
-    <value>Wir würden uns freuen von Ihnen 5 Sterne zu bekommen.
-    
-Zeigen Sie uns Ihre Wertschätzung und motivieren Sie uns die App noch besser zu machen!</value>
+    <value>Ci piacerebbe che dessi 5 stelle alla nostra app
+
+Mostrarci il tuo apprezzamento nello Store ci aiuterà a continuare a lavorare sull'app e renderla ancora migliore!</value>
   </data>
   <data name="RatingMessage2" xml:space="preserve">
-    <value>Wir freuen uns, dass Sie {0} häufig nutzen!
-    
-Geben Sie uns eine 5-Sterne-Bewertung?</value>
+    <value>Sembra che usi l anostra app un sacco!
+
+Hai pensato a darci 5 stelle per dimostrare il tuo apprezzamento?</value>
   </data>
   <data name="RatingTitle" xml:space="preserve">
-    <value>Gefällt Ihnen {0}?</value>
+    <value>Ti piace {0}?</value>
   </data>
   <data name="RatingYes" xml:space="preserve">
-    <value>Bewerten</value>
+    <value>Dai 5 stelle</value>
   </data>
   <data name="FeedbackBody" xml:space="preserve">
-    <value>[Ihr Feedback]
+    <value>[Inserisci qui il tuo commento]
 
-    
----------------------------------
-Device Name: {0}
-Device Manufacturer: {1}
-Device Firmware Version: {2}
-Device Hardware Version: {3}
-Application Version: {4}
----------------------------------
-Note: Diese E-Mail unterliegt den AGB und Datenschutzerklärung von {5}. Mehr Informationen hierzu finden Sie unter "Über uns".</value>
+-------------------------------------------
+
+Nome del modello: {0}
+Produttore: {1}
+Versione Firmware: {2}
+Versione Hardware: {3}
+Versione dell'Applicazione: {4}
+__________________________
+
+Nota: Questo scambio di e-mail e'  regolamentato dai Termini e Condizioni e dalle linee guida sulla riservatezza  di {5} . Troverai maggiori dettagli nel menu A Proposito dell'applicazione. </value>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>{0} Feedback</value>
+    <value>Commenti degli utenti di {0}</value>
   </data>
 </root>

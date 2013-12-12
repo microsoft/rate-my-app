@@ -122,7 +122,7 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>es</value>
+    <value>es-ES</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -131,7 +131,7 @@
   <data name="AppBarButtonText" xml:space="preserve">
     <value>add</value>
   </data>
-  <data name="AppBarMenuItemText" xml:space="preserve">
+  <data name="AppBarMenuItemResetText" xml:space="preserve">
     <value>reset rating counter</value>
   </data>
   <data name="StartPageTitle" xml:space="preserve">
@@ -148,5 +148,32 @@
   </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>RateMyXamlAppWP8</value>
+  </data>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>about page</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>Support: support@myapp.com</value>
+  </data>
+  <data name="CopyrightStatement" xml:space="preserve">
+    <value>Copyright 2013 MyCompany</value>
+  </data>
+  <data name="PrivacyInfoLink" xml:space="preserve">
+    <value>http://myapp.com/privacy.html</value>
+  </data>
+  <data name="TermsAndConditionsLink" xml:space="preserve">
+    <value>http://myapp.com/termsandconditions.html</value>
+  </data>
+  <data name="VersionInfo" xml:space="preserve">
+    <value>1.0.0</value>
+  </data>
+  <data name="AppBarMenuItemAboutText" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="TermsAndConditionsText" xml:space="preserve">
+    <value>RateMyApp's Terms and Conditions</value>
+  </data>
+  <data name="PrivacyInfoText" xml:space="preserve">
+    <value>MyCompany's Privacy Policy</value>
   </data>
 </root>
