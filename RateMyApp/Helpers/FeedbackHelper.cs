@@ -52,7 +52,7 @@ namespace RateMyApp.Helpers
         public DateTime LastLaunchDate
         {
             get { return lastLaunchDate; }
-            set
+            internal set
             {
                 lastLaunchDate = value;
                 OnPropertyChanged("LastLaunchDate");
@@ -62,7 +62,7 @@ namespace RateMyApp.Helpers
         public bool IsReviewed
         {
             get { return reviewed; }
-            set
+            internal set
             {
                 reviewed = value;
                 OnPropertyChanged("IsReviewed");
@@ -72,7 +72,7 @@ namespace RateMyApp.Helpers
         public FeedbackState State
         {
             get { return state; }
-            set
+            internal set
             {
                 state = value;
                 OnPropertyChanged("State");
@@ -82,7 +82,7 @@ namespace RateMyApp.Helpers
         public int LaunchCount
         {
             get { return launchCount; }
-            set
+            internal set
             {
                 launchCount = value;
                 OnPropertyChanged("LaunchCount");
@@ -92,7 +92,7 @@ namespace RateMyApp.Helpers
         public int FirstCount
         {
             get { return firstCount; }
-            set
+            internal set
             {
                 firstCount = value;
                 OnPropertyChanged("FirstCount");
@@ -102,7 +102,7 @@ namespace RateMyApp.Helpers
         public int SecondCount
         {
             get { return secondCount; }
-            set
+            internal set
             {
                 secondCount = value;
                 OnPropertyChanged("SecondCount");
