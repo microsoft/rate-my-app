@@ -32,6 +32,19 @@ namespace RateMyApp.Controls
     /// </summary>
     public partial class FeedbackOverlay : UserControl
     {
+        public static readonly DependencyProperty VisibilityForDesignProperty =
+            DependencyProperty.Register("VisibilityForDesign", typeof(System.Windows.Visibility), typeof(FeedbackOverlay), new PropertyMetadata(System.Windows.Visibility.Collapsed, null));
+
+        public static void SetVisibilityForDesign(FeedbackOverlay element, System.Windows.Visibility value)
+        {
+            element.SetValue(VisibilityForDesignProperty, value);
+        }
+
+        public static System.Windows.Visibility GetVisibilityForDesign(FeedbackOverlay element)
+        {
+            return (System.Windows.Visibility)element.GetValue(VisibilityForDesignProperty);
+        }
+
         // Use this from XAML to control whether animation is on or off
         #region EnableAnimation Dependency Property
 
