@@ -117,7 +117,7 @@ Version history
 ---------------
 
  * v1.1 
-    - Added support for new languages: Swedish, Norwegian, Ukrainian, Vietnamese
+	- Added support for new languages: Russian, Swedish, Norwegian, Ukrainian, Vietnamese
 	- Updated translations to their latest version
 	- All supported languages are now specified using the cultures documented at http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202918(v=vs.105).aspx, i.e. "fi-FI" instead of "FI".
 	- Added new public method Review() in FeedbackHelper
