@@ -37,9 +37,9 @@
             <TextBlock Text="❖" HorizontalAlignment="Center" />
             <HyperlinkButton NavigateUri="{Binding Path=LocalizedResources.TermsAndConditionsLink, Source={StaticResource LocalizedStrings}}"  Content="{Binding Path=LocalizedResources.TermsAndConditionsText, Source={StaticResource LocalizedStrings}}" TargetName="_new"/>
             <TextBlock Text="❖" HorizontalAlignment="Center" />
-            <HyperlinkButton NavigateUri="{Binding Path=LocalizedResources.PrivacyInfoLink, Source={StaticResource LocalizedStrings}}"  Content="{Binding Path=LocalizedResources.PrivacyInfoText, Source={StaticResource LocalizedStrings}}"/>
+            <HyperlinkButton NavigateUri="{Binding Path=LocalizedResources.PrivacyInfoLink, Source={StaticResource LocalizedStrings}}"  Content="{Binding Path=LocalizedResources.PrivacyInfoText, Source={StaticResource LocalizedStrings}}" TargetName="_new"/>
             <TextBlock Text="❖" HorizontalAlignment="Center" />
-            <Button x:Name="RateAppButton" Content="Rate app in the store" Click="RateAppButton_Click" />
+            <Button x:Name="RateAppButton" Content="Rate this app in the store" Click="RateAppButton_Click" />
         </StackPanel>
     </Grid>
 
