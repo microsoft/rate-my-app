@@ -43,7 +43,9 @@ To build and run the sample:
 To deploy the sample on Windows Phone 8 device:
  * See the official documentation for deploying and testing applications on Windows Phone devices at http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
-More detailed information can be found in the https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true file. 
+More detailed information can be found in the [RateMyAppGuide.pdf](https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true) doc.
+
+For brief overview info on Rate My App solution you may also wish to check the documentation at [Lumia Developer's Library] (http://developer.nokia.com/Resources/Library/Lumia/#!code-examples/rate-my-app.html)
 
 
 About the implementation
@@ -119,7 +121,7 @@ Version history
  * v1.1 
 	- Added support for new languages: Russian, Swedish, Norwegian, Ukrainian, Vietnamese
 	- Updated translations to their latest version
-	- All supported languages are now specified using the cultures documented at http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202918(v=vs.105).aspx, i.e. "fi-FI" instead of "FI".
+	- All supported languages are now specified using the cultures documented at http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202918(v=vs.105).aspx, i.e. "fi-FI" instead of "fi".
 	- Added new public method Review() in FeedbackHelper
 	- Windows Phone 8 XAML demo app's About page provides "any time" review option
 	- New VisibilityForDesign property in FeedbackOverlay 
