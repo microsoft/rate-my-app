@@ -43,7 +43,9 @@ To build and run the sample:
 To deploy the sample on Windows Phone 8 device:
  * See the official documentation for deploying and testing applications on Windows Phone devices at http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
-More detailed information can be found in the https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true file. 
+More detailed information can be found in the [RateMyAppGuide.pdf](https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true) doc.
+
+For brief overview info on Rate My App solution you may also wish to check the documentation at [Lumia Developer's Library] (http://developer.nokia.com/Resources/Library/Lumia/#!code-examples/rate-my-app.html)
 
 
 About the implementation
