@@ -16,7 +16,7 @@ Developed with Microsoft Visual Studio Express for Windows Phone 2012.
 
 Compatible with:
 
- * Windows Phone 7
+ * Windows Phone 7.1
  * Windows Phone 8
 
 Tested to work on:
@@ -43,7 +43,7 @@ To build and run the sample:
 To deploy the sample on Windows Phone 8 device:
  * See the official documentation for deploying and testing applications on Windows Phone devices at http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
-More detailed information can be found in the \Doc\RateMyAppGuide.pdf file. 
+More detailed information can be found in the https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true file. 
 
 
 About the implementation
@@ -89,7 +89,7 @@ Important classes:
 Localisation
 ------------
 
-In this first release the component includes strings localized in the following languages: Arabic, German, English US, English UK, Spanish, Finnish, French, Hebrew, Croatian, Hungarian, Italian, Lithuanian, Dutch, Polish, Portuguese BR, Portuguese PT, Romanian, Slovenian and Chinese Simplified.
+In v1.0 the component includes strings localized in the following languages: Arabic, German, English US, English UK, Spanish, Finnish, French, Hebrew, Croatian, Hungarian, Italian, Lithuanian, Dutch, Polish, Portuguese BR, Portuguese PT, Romanian, Slovenian and Chinese Simplified.
 
 You are welcome to contribute your own translations (or improve the existing ones) at http://www.getlocalization.com/ratemyapp/
 
@@ -110,11 +110,20 @@ Downloads
 
 | Project | Release | Download |
 | ------- | --------| -------- |
+| Rate My App | v1.1 | [rate-my-app-1.1.zip](https://github.com/nokia-developer/rate-my-app/archive/v1.1.zip) |
 | Rate My App | v1.0 | [rate-my-app-1.0.zip](https://github.com/nokia-developer/rate-my-app/archive/v1.0.zip) |
 
 Version history
 ---------------
 
- * 1.0 First public release of the current implementation. You can find an earlier version of the project at http://developer.nokia.com/Community/Wiki/File:WP8_Rate_My_App_Flow.zip
+ * v1.1 
+    - Added support for new languages: Swedish, Norwegian, Ukrainian, Vietnamese
+	- Updated translations to their latest version
+	- All supported languages are now specified using the cultures documented at http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202918(v=vs.105).aspx, i.e. "fi-FI" instead of "FI".
+	- Added new public method Review() in FeedbackHelper
+	- Windows Phone 8 XAML demo app's About page provides "any time" review option
+	- New VisibilityForDesign property in FeedbackOverlay 
+
+ * v1.0 First public release of the current implementation. You can find an earlier version of the project at http://developer.nokia.com/Community/Wiki/File:WP8_Rate_My_App_Flow.zip
 
 
