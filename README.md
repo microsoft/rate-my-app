@@ -122,9 +122,9 @@ Version history
 	- Added support for new languages: Russian, Swedish, Norwegian, Ukrainian, Vietnamese
 	- Updated translations to their latest version
 	- All supported languages are now specified using the cultures documented at http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202918(v=vs.105).aspx, i.e. "fi-FI" instead of "fi".
-	- Added new public method Review() in FeedbackHelper
+	- New public method Review() in FeedbackHelper, which allows developers to initiate the review operation "any time", while still making sure that the Rate My App component’s state is also updated in order to prevent superfluous review prompts.
 	- Windows Phone 8 XAML demo app's About page provides "any time" review option
-	- New VisibilityForDesign property in FeedbackOverlay 
+	- New VisibilityForDesign property in FeedbackOverlay, which can be set to “Visible” if you want to see component’s overlay in the UI designer.
 
  * v1.0 First public release of the current implementation. You can find an earlier version of the project at http://developer.nokia.com/Community/Wiki/File:WP8_Rate_My_App_Flow.zip
 
