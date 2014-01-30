@@ -30,7 +30,7 @@
     <Language code="es-ES" />
     <Language code="ar-SA" />
   </Languages>
-  <App xmlns="" ProductID="{bd80b8ce-23ae-4fd0-acf5-67499b079a7b}" Title="RateMyXamlAppWP8" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RateMyXamlAppWP8 author" Description="Sample description" Publisher="RateMyXamlAppWP8" PublisherID="{2a0c9e2b-476b-4375-9e59-6a9e83f13ede}">
+  <App xmlns="" ProductID="{bd80b8ce-23ae-4fd0-acf5-67499b079a7b}" Title="RateMyXamlAppWP8" RuntimeType="Silverlight" Version="1.1.0.0" Genre="apps.normal" Author="RateMyXamlAppWP8 author" Description="Sample description" Publisher="RateMyXamlAppWP8" PublisherID="{2a0c9e2b-476b-4375-9e59-6a9e83f13ede}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -49,11 +49,16 @@
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
           <Title>RateMyXamlAppWP8</Title>
-          <BackContent></BackContent>
-          <BackBackgroundImageURI></BackBackgroundImageURI>
-          <BackTitle></BackTitle>
-          <DeviceLockImageURI></DeviceLockImageURI>
-          <HasLarge></HasLarge>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <DeviceLockImageURI>
+          </DeviceLockImageURI>
+          <HasLarge>
+          </HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

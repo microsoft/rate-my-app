@@ -9,6 +9,9 @@
  * See the license text file delivered with this project for more information.
  */
 
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Tasks;
@@ -765,10 +768,34 @@ namespace RateMyApp.Controls
         /// </summary>
         private void Feedback()
         {
-            // Application version
-            var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            var parts = asm.FullName.Split(',');
-            var version = parts[1].Split('=')[1];
+            string version = string.Empty;
+
+            var appManifestResourceInfo = Application.GetResourceStream(new Uri("WMAppManifest.xml", UriKind.Relative));
+
+            using (var appManifestStream = appManifestResourceInfo.Stream)
+            {
+                using (var reader = XmlReader.Create(appManifestStream, new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
+                {
+                    var doc = XDocument.Load(reader);
+                    var app = doc.Descendants("App").FirstOrDefault();
+                    if (app != null)
+                    {
+                        var versionAttribute = app.Attribute("Version");
+                        if (versionAttribute != null)
+                        {
+                            version = versionAttribute.Value;
+                        }
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(version))
+            {
+                // Application version
+                var asm = System.Reflection.Assembly.GetExecutingAssembly();
+                var parts = asm.FullName.Split(',');
+                version = parts[1].Split('=')[1];
+            }
 
             string company = GetCompanyName(this);
             if (company == null || company.Length <= 0)
