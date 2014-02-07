@@ -447,7 +447,7 @@ namespace RateMyApp.Controls
         private PhoneApplicationFrame _rootFrame = null;
 
         // Title of the review/feedback notification
-        public string Title
+        private string Title
         {
             set
             {
@@ -459,7 +459,7 @@ namespace RateMyApp.Controls
         }
 
         // Message of the review/feedback notification
-        public string Message
+        private string Message
         {
             set
             {
@@ -471,7 +471,7 @@ namespace RateMyApp.Controls
         }
 
         // Button text for not acting upon review/feedback notification
-        public string NoText
+        private string NoText
         {
             set
             {
@@ -483,7 +483,7 @@ namespace RateMyApp.Controls
         }
 
         // Button text for acting upon review/feedback notification
-        public string YesText
+        private string YesText
         {
             set
             {
