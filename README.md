@@ -1,16 +1,29 @@
 Rate My App
 ===========
 
-The Rate My App component is used to create prompts that appear at set intervals and allow the user to provide feedback and rate the application in the Windows Phone Store.
+The Rate My App component is used to create prompts that appear at set intervals
+and allow the user to provide feedback and rate the application in the Windows
+Phone Store.
 
-By default, when the application with Rate My App component is started for the 5th time, a dialog for reviewing the app is shown to the user. If the user declines to review the app, she will be given the option to provide direct feedback to the developer. On the 10th run of the app, if a review was not already collected, the user will be prompted one more time to rate the app. The interval of showing the dialogs, as well as the precise textual content of the dialogs can be configured to better suit your needs.
+By default, when the application with Rate My App component is started for the
+5th time, a dialog for reviewing the app is shown to the user. If the user
+declines to review the app, she will be given the option to provide direct
+feedback to the developer. On the 10th run of the app, if a review was not
+already collected, the user will be prompted one more time to rate the app. The
+interval of showing the dialogs, as well as the precise textual content of the
+dialogs can be configured to better suit your needs.
 
-This solution consists of Rate My App component and several demo applications demonstrating how Rate My App component can be integrated to various kinds of Windows Phone applications like XAML, Panorama, XAML/XNA, XAML/Direct3D apps.
+This solution consists of Rate My App component and several demo applications
+demonstrating how Rate My App component can be integrated to various kinds of
+Windows Phone applications like XAML, Panorama, XAML/XNA, XAML/Direct3D apps.
 
 This solution is hosted in GitHub:
 https://github.com/nokia-developer/rate-my-app
 
-Rate My App component is also available through NuGet Package Manager. Search NuGet repositories for "RateMyApp", install it on your application, and follow the instructions in Rate My App Guide to easily integrate review and feedback functionality to your app. 
+Rate My App component is also available through NuGet Package Manager. Search
+NuGet repositories for "RateMyApp", install it on your application, and follow
+the instructions in Rate My App Guide to easily integrate review and feedback
+functionality to your app. 
 
 Developed with Microsoft Visual Studio Express for Windows Phone 2012.
 
@@ -36,16 +49,23 @@ To build and run the sample:
 
  * Open the SLN file
    * File > Open Project, select the file RateMyApp.sln
- * Right-click RateMyXamlAppWP8 in the Solution Explorer and select "Set as StartUp Project"   
+ * Right-click RateMyXamlAppWP8 in the Solution Explorer and select "Set as
+   StartUp Project"   
  * Select the target 'Emulator WXGA'.
  * Press F5 to build the project and run it on the Windows Phone Emulator.
 
 To deploy the sample on Windows Phone 8 device:
- * See the official documentation for deploying and testing applications on Windows Phone devices at http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
-More detailed information can be found in the [RateMyAppGuide.pdf](https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true) doc.
+ * See the official documentation for deploying and testing applications on
+   Windows Phone devices at
+   http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
-For brief overview info on Rate My App solution you may also wish to check the documentation at [Lumia Developer's Library] (http://developer.nokia.com/Resources/Library/Lumia/#!code-examples/rate-my-app.html)
+More detailed information can be found in the
+[RateMyAppGuide.pdf](https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true) doc.
+
+For brief overview info on Rate My App solution you may also wish to check the
+documentation at
+[Lumia Developer's Library](http://developer.nokia.com/Resources/Library/Lumia/#!code-examples/rate-my-app.html)
 
 
 About the implementation
@@ -91,9 +111,13 @@ Important classes:
 Localisation
 ------------
 
-In v1.0 the component includes strings localized in the following languages: Arabic, German, English US, English UK, Spanish, Finnish, French, Hebrew, Croatian, Hungarian, Italian, Lithuanian, Dutch, Polish, Portuguese BR, Portuguese PT, Romanian, Slovenian and Chinese Simplified.
+In v1.0 the component includes strings localized in the following languages:
+Arabic, German, English US, English UK, Spanish, Finnish, French, Hebrew,
+Croatian, Hungarian, Italian, Lithuanian, Dutch, Polish, Portuguese BR,
+Portuguese PT, Romanian, Slovenian and Chinese Simplified.
 
-You are welcome to contribute your own translations (or improve the existing ones) at http://www.getlocalization.com/ratemyapp/
+You are welcome to contribute your own translations (or improve the existing
+ones) at http://www.getlocalization.com/ratemyapp/
 
 
 Known issues
@@ -105,7 +129,8 @@ No known issues.
 License
 -------
 
-See the license text file delivered with this project: https://github.com/nokia-developer/rate-my-app/blob/master/License.txt
+See the license text file delivered with this project:
+https://github.com/nokia-developer/rate-my-app/blob/master/License.txt
 
 Downloads
 ---------
