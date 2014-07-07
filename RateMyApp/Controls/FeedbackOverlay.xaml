@@ -23,12 +23,12 @@
 
     <UserControl.Resources>
         <Storyboard x:Name="showContent">
-            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity" />
-            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="xProjection" Storyboard.TargetProperty="RotationX" />
+            <DoubleAnimation To="1" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="0" Storyboard.TargetName="xProjection" Storyboard.TargetProperty="RotationX" />
         </Storyboard>
         <Storyboard x:Name="hideContent">
-            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity" />
-            <DoubleAnimation Duration="0:0:0.5" To="90" Storyboard.TargetName="xProjection" Storyboard.TargetProperty="RotationX" />
+            <DoubleAnimation To="0" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="90" Storyboard.TargetName="xProjection" Storyboard.TargetProperty="RotationX" />
         </Storyboard>
     </UserControl.Resources>
 
