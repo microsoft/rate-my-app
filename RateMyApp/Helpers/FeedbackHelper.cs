@@ -14,6 +14,7 @@ using Microsoft.Phone.Tasks;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO.IsolatedStorage;
 
 namespace RateMyApp.Helpers
 {
@@ -168,7 +169,7 @@ namespace RateMyApp.Helpers
         /// <summary>
         /// Loads last state from storage and works out the new state.
         /// </summary>
-        private void LoadState()
+        public void LoadState()
         {
             try
             {
@@ -205,13 +206,14 @@ namespace RateMyApp.Helpers
         /// <summary>
         /// Stores current state.
         /// </summary>
-        private void StoreState()
+        public void StoreState()
         {
             try
             {
                 StorageHelper.StoreSetting(LaunchCountKey, LaunchCount, true);
                 StorageHelper.StoreSetting(ReviewedKey, reviewed, true);
                 StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate, true);
+                IsolatedStorageSettings.ApplicationSettings.Save();
             }
             catch (Exception ex)
             {
