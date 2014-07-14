@@ -766,7 +766,7 @@ namespace RateMyApp.Controls
         /// <summary>
         /// Launch feedback email.
         /// </summary>
-        private void Feedback()
+        public void Feedback()
         {
             string version = string.Empty;
 
