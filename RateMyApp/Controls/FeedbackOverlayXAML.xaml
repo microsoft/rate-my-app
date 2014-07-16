@@ -1,0 +1,64 @@
+﻿<!--
+ Copyright (c) 2013-2014 Microsoft Mobile. All rights reserved.
+
+ Nokia, Nokia Connecting People, Nokia Developer, and HERE are trademarks
+ and/or registered trademarks of Nokia Corporation. Other product and company
+ names mentioned herein may be trademarks or trade names of their respective
+ owners.
+
+ See the license text file delivered with this project for more information.
+-->
+
+<UserControl x:Class="RateMyApp.Controls.FeedbackOverlay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource ContentControlFontSize}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Visibility="{Binding VisibilityForDesign, RelativeSource={RelativeSource Self}}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <UserControl.Resources>
+        <Storyboard x:Name="showContent">
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="xProjection" Storyboard.TargetProperty="RotationX" />
+        </Storyboard>
+        <Storyboard x:Name="hideContent">
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="90" Storyboard.TargetName="xProjection" Storyboard.TargetProperty="RotationX" />
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Rectangle Fill="{StaticResource PhoneBackgroundBrush}" Opacity="0.6"/>
+        <Border x:Name="content" VerticalAlignment="Top" Background="{StaticResource PhoneChromeBrush}">
+            <Grid Margin="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="title" Grid.ColumnSpan="2" Margin="12,0,12,0" HorizontalAlignment="Left" 
+                           Style="{StaticResource MessageDialogTitleStyle}" FontWeight="Bold" TextWrapping="Wrap" />
+
+                <TextBlock x:Name="message" Grid.ColumnSpan="2" Grid.Row="1" Margin="12,12,12,12" HorizontalAlignment="Left" 
+                           Style="{StaticResource MessageDialogContentStyle}" TextWrapping="Wrap" />
+
+                <Button x:Name="yesButton" Margin="0,0,0,0" Grid.Row="2" HorizontalAlignment="Center" Grid.Column="0" />
+                <Button x:Name="noButton" Margin="0,0,0,0" Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" />
+
+            </Grid>
+            <Border.Projection>
+                <PlaneProjection x:Name="xProjection" />
+            </Border.Projection>
+        </Border>
+    </Grid>
+</UserControl>

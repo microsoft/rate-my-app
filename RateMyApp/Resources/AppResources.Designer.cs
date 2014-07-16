@@ -10,7 +10,10 @@
 
 namespace RateMyApp.Resources {
     using System;
-    
+#if SILVERLIGHT
+#else	
+    using System.Reflection;
+#endif    
     
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -39,7 +42,11 @@ namespace RateMyApp.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
+#if SILVERLIGHT				
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RateMyApp.Resources.AppResources", typeof(AppResources).Assembly);
+#else
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RateMyApp.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+#endif					
                     resourceMan = temp;
                 }
                 return resourceMan;

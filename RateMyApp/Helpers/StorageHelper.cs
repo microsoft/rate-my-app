@@ -9,7 +9,9 @@
  * See the license text file delivered with this project for more information.
  */
 
+#if SILVERLIGHT
 using System.IO.IsolatedStorage;
+#endif
 
 namespace RateMyApp.Helpers
 {
@@ -28,12 +30,19 @@ namespace RateMyApp.Helpers
         /// <returns>True if success, false otherwise.</returns>
         public static bool StoreSetting(string key, object value, bool overwrite)
         {
+#if SILVERLIGHT
             if (overwrite || !IsolatedStorageSettings.ApplicationSettings.Contains(key))
             {
                 IsolatedStorageSettings.ApplicationSettings[key] = value;
                 return true;
             }
-
+#else
+            if (overwrite || !Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey(key))
+            {
+                Windows.Storage.ApplicationData.Current.LocalSettings.Values[key] = value;
+                return true;
+            }
+#endif
             return false;
         }
 
@@ -45,11 +54,17 @@ namespace RateMyApp.Helpers
         /// <returns>The value for the key or a default value if key is not found.</returns>
         public static T GetSetting<T>(string key)
         {
+#if SILVERLIGHT		
             if (IsolatedStorageSettings.ApplicationSettings.Contains(key))
             {
                 return (T)IsolatedStorageSettings.ApplicationSettings[key];
             }
-
+#else
+            if (Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey(key))
+            {
+                return (T)Windows.Storage.ApplicationData.Current.LocalSettings.Values[key];
+            }
+#endif
             return default(T);
         }
 
@@ -61,11 +76,17 @@ namespace RateMyApp.Helpers
         /// <returns>The value for the key or the default value if key is not found.</returns>
         public static T GetSetting<T>(string key, T defaultVal)
         {
+#if SILVERLIGHT	
             if (IsolatedStorageSettings.ApplicationSettings.Contains(key))
             {
                 return (T)IsolatedStorageSettings.ApplicationSettings[key];
             }
-
+#else
+            if (Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey(key))
+            {
+                return (T)Windows.Storage.ApplicationData.Current.LocalSettings.Values[key];
+            }
+#endif
             return defaultVal;
         }
 
@@ -75,7 +96,11 @@ namespace RateMyApp.Helpers
         /// <param name="key"></param>
         public static void RemoveSetting(string key)
         {
+#if SILVERLIGHT		
             IsolatedStorageSettings.ApplicationSettings.Remove(key);
+#else
+			Windows.Storage.ApplicationData.Current.LocalSettings.Values.Remove(key);
+#endif
         }
     }
 }

@@ -12,18 +12,31 @@
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Info;
-using Microsoft.Phone.Tasks;
 using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 using System.Windows;
+using RateMyApp.Helpers;
+
+#if SILVERLIGHT
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Info;
+using Microsoft.Phone.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Visibility = System.Windows.Visibility;
+#else
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
+using Windows.ApplicationModel.Email;
+using System.IO;
+using Windows.Storage;
+using Windows.Security.ExchangeActiveSyncProvisioning;
+using Windows.ApplicationModel.Resources;
+#endif
 
-using RateMyApp.Helpers;
 using RateMyApp.Resources;
 
 namespace RateMyApp.Controls
@@ -36,16 +49,16 @@ namespace RateMyApp.Controls
     public partial class FeedbackOverlay : UserControl
     {
         public static readonly DependencyProperty VisibilityForDesignProperty =
-            DependencyProperty.Register("VisibilityForDesign", typeof(System.Windows.Visibility), typeof(FeedbackOverlay), new PropertyMetadata(System.Windows.Visibility.Collapsed, null));
+            DependencyProperty.Register("VisibilityForDesign", typeof(Visibility), typeof(FeedbackOverlay), new PropertyMetadata(Visibility.Collapsed, null));
 
-        public static void SetVisibilityForDesign(FeedbackOverlay element, System.Windows.Visibility value)
+        public static void SetVisibilityForDesign(FeedbackOverlay element, Visibility value)
         {
             element.SetValue(VisibilityForDesignProperty, value);
         }
 
-        public static System.Windows.Visibility GetVisibilityForDesign(FeedbackOverlay element)
+        public static Visibility GetVisibilityForDesign(FeedbackOverlay element)
         {
-            return (System.Windows.Visibility)element.GetValue(VisibilityForDesignProperty);
+            return (Visibility)element.GetValue(VisibilityForDesignProperty);
         }
 
         // Use this from XAML to control whether animation is on or off
@@ -459,8 +472,10 @@ namespace RateMyApp.Controls
         // Use this for detecting visibility change on code
         public event EventHandler VisibilityChanged = null;
 
+#if SILVERLIGHT
         // PhoneApplicationFrame needed for detecting back presses
         private PhoneApplicationFrame _rootFrame = null;
+#endif
 
         // Title of the review/feedback notification
         private string Title
@@ -614,11 +629,15 @@ namespace RateMyApp.Controls
         /// </summary>
         private void AttachBackKeyPressed()
         {
+#if SILVERLIGHT		
             if (_rootFrame == null)
             {
                 _rootFrame = Application.Current.RootVisual as PhoneApplicationFrame;
                 _rootFrame.BackKeyPress += FeedbackOverlay_BackKeyPress;
             }
+#else
+			Windows.Phone.UI.Input.HardwareButtons.BackPressed += FeedbackOverlay_BackKeyPress;
+#endif
         }
 
         /// <summary>
@@ -626,14 +645,22 @@ namespace RateMyApp.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+#if SILVERLIGHT
         private void FeedbackOverlay_BackKeyPress(object sender, CancelEventArgs e)
+#else
+        private void FeedbackOverlay_BackKeyPress(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
+#endif
         {
             // If back is pressed whilst notification is open, close 
             // the notification and cancel back to stop app from exiting.
-            if (Visibility == System.Windows.Visibility.Visible)
+            if (Visibility == Visibility.Visible)
             {
                 OnNoClick();
+#if SILVERLIGHT
                 e.Cancel = true;
+#else
+				e.Handled = true;
+#endif				
             }
         }
 
@@ -700,7 +727,11 @@ namespace RateMyApp.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+#if SILVERLIGHT		
         private void hideContent_Completed(object sender, EventArgs e)
+#else
+        private void hideContent_Completed(object sender, object e)
+#endif
         {
             ShowFeedback();
         }
@@ -757,19 +788,24 @@ namespace RateMyApp.Controls
         /// </summary>
         private void Review()
         {
-            FeedbackHelper.Default.Reviewed();
+            FeedbackHelper.Default.Review();
 
-            var marketplace = new MarketplaceReviewTask();
-            marketplace.Show();
+            //var marketplace = new MarketplaceReviewTask();
+            //marketplace.Show();
         }
 
         /// <summary>
         /// Launch feedback email.
         /// </summary>
+#if SILVERLIGHT		
         private void Feedback()
+#else
+        private async void Feedback()
+#endif
         {
             string version = string.Empty;
 
+#if SILVERLIGHT
             var appManifestResourceInfo = Application.GetResourceStream(new Uri("WMAppManifest.xml", UriKind.Relative));
 
             using (var appManifestStream = appManifestResourceInfo.Stream)
@@ -796,6 +832,27 @@ namespace RateMyApp.Controls
                 var parts = asm.FullName.Split(',');
                 version = parts[1].Split('=')[1];
             }
+#else
+            var uri = new System.Uri("ms-appx:///AppxManifest.xml");
+            StorageFile file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (var rastream = await file.OpenReadAsync())
+            using (var appManifestStream = rastream.AsStreamForRead())
+            {
+                using (var reader = XmlReader.Create(appManifestStream, new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
+                {
+                    var doc = XDocument.Load(reader);
+                    var app = doc.Descendants("Identity").FirstOrDefault();
+                    if (app != null)
+                    {
+                        var versionAttribute = app.Attribute("Version");
+                        if (versionAttribute != null)
+                        {
+                            version = versionAttribute.Value;
+                        }
+                    }
+                }
+            }
+#endif
 
             string company = GetCompanyName(this);
             if (company == null || company.Length <= 0)
@@ -803,6 +860,7 @@ namespace RateMyApp.Controls
                 company = "<Company>";
             }
 
+#if SILVERLIGHT
             // Body text including hardware, firmware and software info
             string body = string.Format(FeedbackOverlay.GetFeedbackBody(this),
                  DeviceStatus.DeviceName,
@@ -819,6 +877,25 @@ namespace RateMyApp.Controls
             email.Body = body;
 
             email.Show();
+#else
+            var easClientDeviceInformation = new EasClientDeviceInformation();
+
+            // Body text including hardware, firmware and software info
+            string body = string.Format(FeedbackOverlay.GetFeedbackBody(this),
+                 easClientDeviceInformation.SystemProductName,
+                 easClientDeviceInformation.SystemManufacturer,
+                 easClientDeviceInformation.SystemFirmwareVersion,
+                 easClientDeviceInformation.SystemHardwareVersion,
+                 version,
+                 company);
+
+            // Send an Email with attachment
+            EmailMessage email = new EmailMessage();
+            email.To.Add(new EmailRecipient(FeedbackOverlay.GetFeedbackTo(this)));
+            email.Subject = string.Format(FeedbackOverlay.GetFeedbackSubject(this), GetApplicationName());
+            email.Body = body;
+            await EmailManager.ShowComposeNewEmailAsync(email);
+#endif			
         }
 
         /// <summary>
@@ -834,14 +911,14 @@ namespace RateMyApp.Controls
                 PreparePanoramaPivot(false);
                 FeedbackOverlay.SetIsVisible(this, true);
                 FeedbackOverlay.SetIsNotVisible(this, false);
-                Visibility = System.Windows.Visibility.Visible;
+                Visibility = Visibility.Visible;
             }
             else
             {
                 PreparePanoramaPivot(true);
                 FeedbackOverlay.SetIsVisible(this, false);
                 FeedbackOverlay.SetIsNotVisible(this, true);
-                Visibility = System.Windows.Visibility.Collapsed;
+                Visibility = Visibility.Collapsed;
             }
 
             if (wasVisible != visible)
@@ -894,11 +971,19 @@ namespace RateMyApp.Controls
         /// </summary>
         private void OverrideLanguage()
         {
+#if SILVERLIGHT		
             CultureInfo originalCulture = Thread.CurrentThread.CurrentUICulture;
             CultureInfo newCulture = new CultureInfo(GetLanguageOverride(this));
 
             Thread.CurrentThread.CurrentCulture = newCulture;
             Thread.CurrentThread.CurrentUICulture = newCulture;
+#else
+            CultureInfo originalCulture = CultureInfo.DefaultThreadCurrentUICulture;
+            CultureInfo newCulture = new CultureInfo(GetLanguageOverride(this));
+
+            CultureInfo.DefaultThreadCurrentCulture = newCulture;
+            CultureInfo.DefaultThreadCurrentUICulture = newCulture;
+#endif
 
             SetFeedbackBody(this, AppResources.FeedbackBody);
             SetFeedbackMessage1(this, string.Format(AppResources.FeedbackMessage1, GetApplicationName()));
@@ -912,8 +997,13 @@ namespace RateMyApp.Controls
             SetRatingTitle(this, string.Format(AppResources.RatingTitle, GetApplicationName()));
             SetRatingYes(this, AppResources.RatingYes);
 
+#if SILVERLIGHT
             Thread.CurrentThread.CurrentCulture = originalCulture;
             Thread.CurrentThread.CurrentUICulture = originalCulture;
+#else
+            CultureInfo.DefaultThreadCurrentCulture = originalCulture;
+            CultureInfo.DefaultThreadCurrentUICulture = originalCulture;
+#endif			
         }
 
         /// <summary>

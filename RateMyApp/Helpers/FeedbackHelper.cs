@@ -9,11 +9,20 @@
  * See the license text file delivered with this project for more information.
  */
 
-using Microsoft.Phone.Shell;
-using Microsoft.Phone.Tasks;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+#if SILVERLIGHT
+using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
+#else
+using Windows.Storage;
+using System.Xml.Linq;
+using System.Xml;
+using System.IO;
+using System.Linq;
+#endif
+
 
 namespace RateMyApp.Helpers
 {
@@ -129,12 +138,20 @@ namespace RateMyApp.Helpers
         /// </summary>
         public void Launching()
         {
+#if SILVERLIGHT		
             var license = new Microsoft.Phone.Marketplace.LicenseInformation();
-
+#else
+			var license = Windows.ApplicationModel.Store.CurrentApp.LicenseInformation;
+#endif
             // Only load state if app is not trial, app is not activated after
             // being tombstoned, and state has not been loaded before.
+#if SILVERLIGHT		
             if (!license.IsTrial() && 
                 PhoneApplicationService.Current.StartupMode == StartupMode.Launch && 
+#else
+            if (!license.IsTrial && 
+#warning The app state is no longer checked, this needs a review
+#endif
                 State == FeedbackState.Active)
             {
                 LoadState();
@@ -211,7 +228,12 @@ namespace RateMyApp.Helpers
             {
                 StorageHelper.StoreSetting(LaunchCountKey, LaunchCount, true);
                 StorageHelper.StoreSetting(ReviewedKey, reviewed, true);
+#if SILVERLIGHT
                 StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate, true);
+#else
+#warning Solution needed here
+                //StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate, true);
+#endif				
             }
             catch (Exception ex)
             {
@@ -228,12 +250,41 @@ namespace RateMyApp.Helpers
             }
         }
 
+#if SILVERLIGHT
         public void Review()
+#else
+        public async void Review()
+#endif
         {
             Reviewed();
 
+#if SILVERLIGHT
             var marketplace = new MarketplaceReviewTask();
             marketplace.Show();
+#else
+            string appid = "";
+            var uri = new System.Uri("ms-appx:///AppxManifest.xml");
+            StorageFile file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (var rastream = await file.OpenReadAsync())
+            using (var appManifestStream = rastream.AsStreamForRead())
+            {
+                using (var reader = XmlReader.Create(appManifestStream, new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
+                {
+                    var doc = XDocument.Load(reader);
+                    var app = doc.Descendants().Where(e => e.Name.LocalName == "PhoneIdentity").FirstOrDefault();
+                    if (app != null)
+                    {
+                        var idAttribute = app.Attribute("PhoneProductId");
+                        if (idAttribute != null)
+                        {
+                            appid = idAttribute.Value;
+                        }
+                    }
+                }
+            }
+
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:reviewapp?appid=" + appid));
+#endif
         }
     }
 }
