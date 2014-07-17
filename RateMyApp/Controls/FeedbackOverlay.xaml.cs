@@ -38,6 +38,7 @@ using Windows.ApplicationModel.Resources;
 #endif
 
 using RateMyApp.Resources;
+using System.Windows.Media.Animation;
 
 namespace RateMyApp.Controls
 {
@@ -69,13 +70,33 @@ namespace RateMyApp.Controls
 
         public static void SetEnableAnimation(FeedbackOverlay element, bool value)
         {
-            element.SetValue(EnableAnimationProperty, value);
+          element.SetValue(EnableAnimationProperty, value);
         }
 
         public static bool GetEnableAnimation(FeedbackOverlay element)
         {
-            return (bool)element.GetValue(EnableAnimationProperty);
+          return (bool)element.GetValue(EnableAnimationProperty);
         }
+
+        #endregion
+
+        // Use this from XAML to control animation duration
+        #region AnimationDuration Dependency Property
+
+        public static readonly DependencyProperty AnimationDurationProperty =
+          DependencyProperty.Register("AnimationDuration", typeof(TimeSpan), typeof(FeedbackOverlay), new PropertyMetadata(new TimeSpan(0, 0, 0, 0, 500), null));
+
+
+        public static void SetAnimationDuration(FeedbackOverlay element, TimeSpan value)
+        {
+          element.SetValue(AnimationDurationProperty, value);
+        }
+
+        public static TimeSpan GetAnimationDuration(FeedbackOverlay element)
+        {
+          return (TimeSpan)element.GetValue(AnimationDurationProperty);
+        }
+
 
         #endregion
 
@@ -622,6 +643,12 @@ namespace RateMyApp.Controls
                 SetVisibility(false);
                 FeedbackHelper.Default.State = FeedbackState.Inactive;
             }
+
+            foreach (var doubleAnimation in showContent.Children.OfType<DoubleAnimation>())
+              doubleAnimation.Duration = FeedbackOverlay.GetAnimationDuration(this);
+
+            foreach (var doubleAnimation in hideContent.Children.OfType<DoubleAnimation>())
+              doubleAnimation.Duration = FeedbackOverlay.GetAnimationDuration(this);
         }
 
         /// <summary>
