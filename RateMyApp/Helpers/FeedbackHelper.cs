@@ -191,7 +191,11 @@ namespace RateMyApp.Helpers
             {
                 LaunchCount = StorageHelper.GetSetting<int>(LaunchCountKey);
                 IsReviewed = StorageHelper.GetSetting<bool>(ReviewedKey);
+#if SILVERLIGHT
                 LastLaunchDate = StorageHelper.GetSetting<DateTime>(LastLaunchDateKey);
+#else
+                LastLaunchDate = DateTime.FromBinary(StorageHelper.GetSetting<long>(LastLaunchDateKey));
+#endif
 
                 if (!reviewed)
                 {
@@ -231,8 +235,7 @@ namespace RateMyApp.Helpers
 #if SILVERLIGHT
                 StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate, true);
 #else
-#warning Solution needed here
-                //StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate, true);
+                StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate.ToBinary(), true);
 #endif				
             }
             catch (Exception ex)
