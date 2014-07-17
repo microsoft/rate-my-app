@@ -162,7 +162,9 @@
                               Grid.RowSpan="2"
                               FeedbackTo="_Feedback_to"
                               ApplicationName="_App_name"
-                              CompanyName="_Company"/>
+                              CompanyName="_Company"
+                              AnimationDuration="0:0:5"
+                              />
 
     </Grid>
 </Page>

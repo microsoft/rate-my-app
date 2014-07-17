@@ -26,6 +26,7 @@ using Microsoft.Phone.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Visibility = System.Windows.Visibility;
+using DoubleAnimation = System.Windows.Media.Animation.DoubleAnimation;
 #else
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
@@ -35,9 +36,11 @@ using System.IO;
 using Windows.Storage;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.ApplicationModel.Resources;
+using DoubleAnimation = Windows.UI.Xaml.Media.Animation.DoubleAnimation;
 #endif
 
 using RateMyApp.Resources;
+
 
 namespace RateMyApp.Controls
 {
@@ -78,6 +81,25 @@ namespace RateMyApp.Controls
         }
 
         #endregion
+
+        // Use this from XAML to control animation duration
+        #region AnimationDuration Dependency Property
+
+        public static readonly DependencyProperty AnimationDurationProperty =
+          DependencyProperty.Register("AnimationDuration", typeof(TimeSpan), typeof(FeedbackOverlay), new PropertyMetadata(new TimeSpan(0, 0, 0, 0, 500), null));
+
+        public static void SetAnimationDuration(FeedbackOverlay element, TimeSpan value)
+        {
+            element.SetValue(AnimationDurationProperty, value);
+        }
+
+        public static TimeSpan GetAnimationDuration(FeedbackOverlay element)
+        {
+            return (TimeSpan)element.GetValue(AnimationDurationProperty);
+        }
+
+        #endregion
+ 
 
         // Use this for MVVM binding IsVisible
         #region IsVisible Dependency Property
@@ -622,6 +644,12 @@ namespace RateMyApp.Controls
                 SetVisibility(false);
                 FeedbackHelper.Default.State = FeedbackState.Inactive;
             }
+
+            foreach (var doubleAnimation in showContent.Children.OfType<DoubleAnimation>())
+                doubleAnimation.Duration = FeedbackOverlay.GetAnimationDuration(this);
+ 
+            foreach (var doubleAnimation in hideContent.Children.OfType<DoubleAnimation>())
+                doubleAnimation.Duration = FeedbackOverlay.GetAnimationDuration(this);
         }
 
         /// <summary>
