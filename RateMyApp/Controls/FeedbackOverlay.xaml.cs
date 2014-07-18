@@ -64,6 +64,16 @@ namespace RateMyApp.Controls
             return (Visibility)element.GetValue(VisibilityForDesignProperty);
         }
 
+	public new System.Windows.Media.Brush Background
+        {
+            get { return (System.Windows.Media.Brush)GetValue(BackgroundProperty); }
+            set { SetValue(BackgroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Background.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty BackgroundProperty =
+            DependencyProperty.Register("Background", typeof(System.Windows.Media.Brush), typeof(FeedbackOverlay), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
+
         // Use this from XAML to control whether animation is on or off
         #region EnableAnimation Dependency Property
 
