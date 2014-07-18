@@ -163,7 +163,8 @@
                               FeedbackTo="_Feedback_to"
                               ApplicationName="_App_name"
                               CompanyName="_Company"
-                              AnimationDuration="0:0:5"
+                              AnimationDuration="0:0:2.5" Background="#FF41DB31" Foreground="#FFB72323"
+                              
                               />
 
     </Grid>

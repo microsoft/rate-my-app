@@ -63,7 +63,7 @@
                               FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"
                               ApplicationName="{Binding Path=LocalizedResources.ApplicationName, Source={StaticResource LocalizedStrings}}"
                               CompanyName="{Binding Path=LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"
-                              AnimationDuration="0:0:2.5"
+                              AnimationDuration="0:0:2.5" Background="#FF1FD255" Foreground="#FF813333"
                               />
 
         <!-- Fully customized FeedbackOverlay component -->

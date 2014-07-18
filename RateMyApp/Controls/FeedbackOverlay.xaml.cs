@@ -37,6 +37,7 @@ using Windows.Storage;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.ApplicationModel.Resources;
 using DoubleAnimation = Windows.UI.Xaml.Media.Animation.DoubleAnimation;
+using Colors = Windows.UI.Colors;
 #endif
 
 using RateMyApp.Resources;
@@ -51,6 +52,7 @@ namespace RateMyApp.Controls
     /// </summary>
     public partial class FeedbackOverlay : UserControl
     {
+
         public static readonly DependencyProperty VisibilityForDesignProperty =
             DependencyProperty.Register("VisibilityForDesign", typeof(Visibility), typeof(FeedbackOverlay), new PropertyMetadata(Visibility.Collapsed, null));
 
@@ -64,15 +66,29 @@ namespace RateMyApp.Controls
             return (Visibility)element.GetValue(VisibilityForDesignProperty);
         }
 
-	public new System.Windows.Media.Brush Background
+        // Using a DependencyProperty as the backing store for Background.  This enables animation, styling, binding, etc...
+        #region Background Dependency Property
+        public new Brush Background
         {
-            get { return (System.Windows.Media.Brush)GetValue(BackgroundProperty); }
+            get { return (Brush)GetValue(BackgroundProperty); }
             set { SetValue(BackgroundProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Background.  This enables animation, styling, binding, etc...
         public new static readonly DependencyProperty BackgroundProperty =
-            DependencyProperty.Register("Background", typeof(System.Windows.Media.Brush), typeof(FeedbackOverlay), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
+            DependencyProperty.Register("Background", typeof(Brush), typeof(FeedbackOverlay), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
+        #endregion
+
+        // Using a DependencyProperty as the backing store for Foreground.  This enables animation, styling, binding, etc...
+        #region Foreground Dependency Property
+        public new Brush Foreground
+        {
+            get { return (Brush)GetValue(ForegroundProperty); }
+            set { SetValue(ForegroundProperty, value); }
+        }
+
+        public new static readonly DependencyProperty ForegroundProperty =
+            DependencyProperty.Register("Foreground", typeof(Brush), typeof(FeedbackOverlay), new PropertyMetadata(new SolidColorBrush(Colors.White)));
+        #endregion
 
         // Use this from XAML to control whether animation is on or off
         #region EnableAnimation Dependency Property
