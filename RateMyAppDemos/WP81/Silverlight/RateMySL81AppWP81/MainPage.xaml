@@ -51,8 +51,10 @@
                 <TextBlock Text="{Binding LaunchCount, StringFormat='Launch count: {0}'}" />
                 <TextBlock Text="{Binding IsReviewed, StringFormat='Is app reviewed: {0}'}" />
                 <TextBlock Text="{Binding LastLaunchDate, StringFormat='Last launch date: {0:G}'}" />
+                <Button Grid.Row="1" Content="Terminate app" Click="Button_Click"/>
             </StackPanel>
-        </StackPanel>
+        </StackPanel>        
+        
         
         <!-- Feedback overlay -->
 

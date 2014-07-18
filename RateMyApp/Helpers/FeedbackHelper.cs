@@ -237,11 +237,13 @@ namespace RateMyApp.Helpers
 #else
                 StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate.ToBinary(), true);
 #endif				
+                StorageHelper.FlushToFile();
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(string.Format("FeedbackHelper.StoreState - Failed to store state, Exception: {0}", ex.ToString()));
             }
+
         }
 
         protected void OnPropertyChanged(string name)

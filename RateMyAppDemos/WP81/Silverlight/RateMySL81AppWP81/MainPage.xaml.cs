@@ -70,5 +70,10 @@ namespace RateMyXamlAppWP8
         {
             NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Terminate();
+        }
     }
 }

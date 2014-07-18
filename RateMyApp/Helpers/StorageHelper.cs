@@ -102,5 +102,16 @@ namespace RateMyApp.Helpers
 			Windows.Storage.ApplicationData.Current.LocalSettings.Values.Remove(key);
 #endif
         }
+
+        public static void FlushToFile()
+        {
+#if SILVERLIGHT
+            IsolatedStorageSettings.ApplicationSettings.Save();
+#else
+#warning No Save() on WinRT :(
+            //Windows.Storage.ApplicationData.Current.LocalSettings
+#endif
+        }
+
     }
 }
