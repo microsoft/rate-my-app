@@ -237,7 +237,7 @@ namespace RateMyApp.Helpers
 #else
                 StorageHelper.StoreSetting(LastLaunchDateKey, lastLaunchDate.ToBinary(), true);
 #endif				
-                StorageHelper.FlushToFile();
+                StorageHelper.FlushToStorage();
             }
             catch (Exception ex)
             {

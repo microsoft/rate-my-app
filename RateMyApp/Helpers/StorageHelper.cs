@@ -103,13 +103,12 @@ namespace RateMyApp.Helpers
 #endif
         }
 
-        public static void FlushToFile()
+        internal static void FlushToStorage()
         {
 #if SILVERLIGHT
             IsolatedStorageSettings.ApplicationSettings.Save();
 #else
-#warning No Save() on WinRT :(
-            //Windows.Storage.ApplicationData.Current.LocalSettings
+            // on WinRT the settings are saved in registry so no flushing is needed
 #endif
         }
 
