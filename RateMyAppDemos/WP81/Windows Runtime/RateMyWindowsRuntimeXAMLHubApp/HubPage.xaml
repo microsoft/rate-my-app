@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:RateMyWindowsRuntimeXAMLHubApp.Data"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
-    xmlns:ctrl="using:RateMyApp.Controls"
+    xmlns:rma="using:RateMyApp.Controls"
     d:DataContext="{Binding Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"
     mc:Ignorable="d">
 
@@ -158,14 +158,19 @@
             </HubSection>
         </Hub>
         <!-- Feedback overlay -->
-        <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
+        <rma:FeedbackOverlay x:Uid="RMA" x:Name="FeedbackOverlay"
+                              Grid.RowSpan="2"
+                              FeedbackTo="_Feedback_to"
+                              ApplicationName="_App_name"
+                              CompanyName="_Company"
+                              />
+        <!--
+        <rma:FeedbackOverlay x:Uid="RMA" x:Name="FeedbackOverlay"
                               Grid.RowSpan="2"
                               FeedbackTo="_Feedback_to"
                               ApplicationName="_App_name"
                               CompanyName="_Company"
                               AnimationDuration="0:0:2.5" Background="#FF41DB31" Foreground="#FFB72323"
-                              
-                              />
-
+                              /> -->
     </Grid>
 </Page>

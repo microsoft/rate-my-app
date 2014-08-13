@@ -141,4 +141,13 @@
   <data name="NavigationFailedExceptionMessage" xml:space="preserve">
     <value>Navigation failed.</value>
   </data>
+  <data name="RMA.ApplicationName" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="RMA.CompanyName" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="RMA.FeedbackTo" xml:space="preserve">
+    <value>some.email@address.com</value>
+  </data>
 </root>
