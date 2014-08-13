@@ -44,6 +44,7 @@ local.properties
 # Build results
 [Dd]ebug/
 [Rr]elease/
+BundleArtifacts/
 *_i.c
 *_p.c
 *.ilk
@@ -64,7 +65,7 @@ local.properties
 *.dotCover
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
-#packages/
+packages/
 
 # Visual C++ cache files
 ipch/
@@ -244,9 +245,6 @@ publish
 
 # Publish Web Output
 *.Publish.xml
-
-# NuGet Packages Directory
-packages
 
 # Windows Azure Build Output
 csx
