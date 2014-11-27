@@ -18,7 +18,7 @@ demonstrating how Rate My App component can be integrated to various kinds of
 Windows Phone applications like XAML, Panorama, XAML/XNA, XAML/Direct3D apps.
 
 This solution is hosted in GitHub:
-https://github.com/nokia-developer/rate-my-app
+https://github.com/Microsoft/rate-my-app
 
 Rate My App component is also available through NuGet Package Manager. Search
 NuGet repositories for "RateMyApp", install it on your application, and follow
@@ -61,7 +61,7 @@ To deploy the sample on Windows Phone 8 device:
    http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx
 
 More detailed information can be found in the
-[RateMyAppGuide.pdf](https://github.com/nokia-developer/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true) doc.
+[RateMyAppGuide.pdf](https://github.com/Microsoft/rate-my-app/blob/master/Doc/RateMyAppGuide.pdf?raw=true) doc.
 
 For brief overview info on Rate My App solution you may also wish to check the
 documentation at
@@ -130,15 +130,15 @@ License
 -------
 
 See the license text file delivered with this project:
-https://github.com/nokia-developer/rate-my-app/blob/master/License.txt
+https://github.com/Microsoft/rate-my-app/blob/master/License.txt
 
 Downloads
 ---------
 
 | Project | Release | Download |
 | ------- | --------| -------- |
-| Rate My App | v1.1 | [rate-my-app-1.1.zip](https://github.com/nokia-developer/rate-my-app/archive/v1.1.zip) |
-| Rate My App | v1.0 | [rate-my-app-1.0.zip](https://github.com/nokia-developer/rate-my-app/archive/v1.0.zip) |
+| Rate My App | v1.1 | [rate-my-app-1.1.zip](https://github.com/Microsoft/rate-my-app/archive/v1.1.zip) |
+| Rate My App | v1.0 | [rate-my-app-1.0.zip](https://github.com/Microsoft/rate-my-app/archive/v1.0.zip) |
 
 Version history
 ---------------
