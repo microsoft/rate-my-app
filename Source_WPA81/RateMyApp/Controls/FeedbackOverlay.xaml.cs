@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Threading;
 using System.Windows;
 using RateMyApp.Helpers;
+using Windows.ApplicationModel.Store;
 
 #if SILVERLIGHT
 using Microsoft.Phone.Controls;
@@ -40,8 +41,9 @@ namespace RateMyApp.Controls
     /// </summary>
     public partial class FeedbackOverlay : UserControl
     {
-        static ResourceLoader Resloader = new ResourceLoader("RateMyApp/Resources/");
-       
+        //static ResourceLoader Resloader = new ResourceLoader("RateMyApp/Resources/");
+        static ResourceLoader Resloader = ResourceLoader.GetForCurrentView("Resources");
+
         public static readonly DependencyProperty VisibilityForDesignProperty =
             DependencyProperty.Register("VisibilityForDesign", typeof(Visibility), typeof(FeedbackOverlay), new PropertyMetadata(Visibility.Collapsed, null));
 
@@ -618,12 +620,12 @@ namespace RateMyApp.Controls
             }
 
             // Set up FeedbackHelper with properties.
-            RateMyApp.Helpers.FeedbackHelper.Default.FirstCount = FeedbackOverlay.GetFirstCount(this);
-            RateMyApp.Helpers.FeedbackHelper.Default.SecondCount = FeedbackOverlay.GetSecondCount(this);
-            RateMyApp.Helpers.FeedbackHelper.Default.CountDays = FeedbackOverlay.GetCountDays(this);
+            FeedbackHelper.Default.FirstCount = FeedbackOverlay.GetFirstCount(this);
+            FeedbackHelper.Default.SecondCount = FeedbackOverlay.GetSecondCount(this);
+            FeedbackHelper.Default.CountDays = FeedbackOverlay.GetCountDays(this);
 
             // Inform FeedbackHelper of the creation of this control.
-            RateMyApp.Helpers.FeedbackHelper.Default.Launching();
+            FeedbackHelper.Default.Launching();
 
             // This class needs to be aware of Back key presses.
             AttachBackKeyPressed();
@@ -878,25 +880,29 @@ namespace RateMyApp.Controls
                 version = parts[1].Split('=')[1];
             }
 #else
-            var uri = new System.Uri("ms-appx:///AppxManifest.xml");
-            StorageFile file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
-            using (var rastream = await file.OpenReadAsync())
-            using (var appManifestStream = rastream.AsStreamForRead())
-            {
-                using (var reader = XmlReader.Create(appManifestStream, new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
-                {
-                    var doc = XDocument.Load(reader);
-                    var app = doc.Descendants("Identity").FirstOrDefault();
-                    if (app != null)
-                    {
-                        var versionAttribute = app.Attribute("Version");
-                        if (versionAttribute != null)
-                        {
-                            version = versionAttribute.Value;
-                        }
-                    }
-                }
-            }
+            //use the new api
+            //var uri = new System.Uri("ms-appx:///AppxManifest.xml");
+            //StorageFile file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+            //using (var rastream = await file.OpenReadAsync())
+            //using (var appManifestStream = rastream.AsStreamForRead())
+            //{
+            //    using (var reader = XmlReader.Create(appManifestStream, new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
+            //    {
+            //        var doc = XDocument.Load(reader);
+            //        var app = doc.Descendants("Identity").FirstOrDefault();
+            //        if (app != null)
+            //        {
+            //            var versionAttribute = app.Attribute("Version");
+            //            if (versionAttribute != null)
+            //            {
+            //                version = versionAttribute.Value;
+            //            }
+            //        }
+            //    }
+            //}
+
+            var versionInfo = Windows.ApplicationModel.Package.Current.Id.Version;
+            version = versionInfo.Major.ToString() + "." + versionInfo.Minor.ToString() + "." + versionInfo.Build.ToString() + "." + versionInfo.Revision.ToString();
 #endif
 
             string company = GetCompanyName(this);
@@ -1007,7 +1013,7 @@ namespace RateMyApp.Controls
                 {
                     UIElement elem = (UIElement)child;
                     elem.IsHitTestVisible = hitTestVisible;
-                }
+                }               
             }
         }
 
