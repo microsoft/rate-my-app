@@ -1,0 +1,32 @@
+1.copy "Controls" and "helps" to your project.
+2.change the namespace used in the copyed files to your project.
+3.and the control to the page.eg:
+        <rma:FeedbackOverlay x:Uid="RMA" x:Name="FeedbackOverlay"
+                               Visibility="Collapsed"
+                                Grid.RowSpan="1"                              
+                                VerticalAlignment="Top"                                
+                                RatingTitle="feel good£¿"
+                                RatingMessage1="give it a five star~   ^.^"
+                                RatingMessage2="you've used it a lot. seems it helps a lot, please give it a five star~"
+                                RatingYes="Yes£¬give 5 star"
+                                RatingNo="not now"
+                                FeedbackTitle="can do better£¿"
+                                FeedbackMessage1="feel sorry you don't like it, give us some feedback?"
+                                FeedbackYes="feedback"
+                                FeedbackNo="not now"
+                                FeedbackTo="Your email address"
+                                FeedbackSubject="Feedback of your APP name"
+                                FeedbackBody="thanks for feedback£¡                                          
+                                            device name: {0}
+                                            manufacture£º{1}                                
+                                            Firmware Version£º{2}
+                                            HardWare Version£º{3}
+                                            APP Version: {4}"                                            
+                                CompanyName="companyName"
+                                ApplicationName="appName"
+                                FirstCount="3" //this is the first time the control appears.
+                                SecondCount="6" //this is the second time the control appears.
+                                CountDays="False"
+                              />
+may be there is something I forget to metion. please refer to Docs/RateMyAppGuide.pdf						  
+							  
